@@ -5,32 +5,8 @@
 }
 
 @font-face {
-    font-family: "CocoSharpLight";
-    src: url('assets/fonts/Coco-Sharp-Light-trial.ttf') format("truetype");
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "CocoSharpRegular";
-    src: url('assets/fonts/Coco-Sharp-Regular-trial.ttf') format("truetype");
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "CocoSharpBold";
-    src: url('assets/fonts/Coco-Sharp-Bold-trial.ttf') format("truetype");
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "CocoSharpExtraBold";
-    src: url('assets/fonts/Coco-Sharp-Extrabold-trial.ttf') format("truetype");
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "CocoSharpHeavy";
-    src: url('assets/fonts/Coco-Sharp-Heavy-trial.ttf') format("truetype");
+    font-family: "Roboto";
+    src: url('assets/fonts/Roboto.ttf') format("truetype");
     font-display: swap;
 }
 
@@ -94,14 +70,16 @@ h2 {
 }
 
 h3 {
-    font-family: CocoSharpRegular, serif;
+    font-family: Roboto, serif;
+    font-weight: 700;
     /* font-size: 1.4rem; */
     /* line-height: 1.25rem; */
     /* letter-spacing: normal; */
 }
 
 h4 {
-    font-family: CocoSharpRegular, serif;
+    font-family: Roboto, serif;
+    font-weight: 400;
     /* font-size: 1rem; */
     /* line-height: 1.25rem; */
     /* letter-spacing: normal; */
@@ -114,7 +92,8 @@ p {
 }
 
 a {
-    font-family: CocoSharpRegular, serif;
+    font-family: Roboto, serif;
+    font-weight: 700;
     /* border: solid #979797;
     border-width: 1px 1px;
     border-radius: 1rem;
@@ -172,6 +151,9 @@ a:focus-within {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 2rem 4rem;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto
 }
 
 .nav-items {
