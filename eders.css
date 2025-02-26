@@ -22,6 +22,36 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: "AileronRegular";
+    src: url('assets/fonts/Aileron-Regular.otf') format("opentype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "AileronSemiBold";
+    src: url('assets/fonts/Aileron-SemiBold.otf') format("opentype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "AileronBold";
+    src: url('assets/fonts/Aileron-Bold.otf') format("opentype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "AileronHeavy";
+    src: url('assets/fonts/Aileron-Heavy.otf') format("opentype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "AileronBlack";
+    src: url('assets/fonts/Aileron-Black.otf') format("opentype");
+    font-display: swap;
+}
+
 *,
 *::before,
 *::after {
@@ -106,16 +136,14 @@ h2 {
 }
 
 h3 {
-    font-family: Roboto, serif;
-    font-weight: 900;
+    font-family: AileronBlack, sans-serif;
     /* font-size: 1.4rem; */
     /* line-height: 1.25rem; */
     /* letter-spacing: normal; */
 }
 
 h4 {
-    font-family: Roboto, serif;
-    font-weight: 400;
+    font-family: AileronBlack, sans-serif;
     /* font-size: 1rem; */
     /* line-height: 1.25rem; */
     /* letter-spacing: normal; */
@@ -128,8 +156,7 @@ p {
 }
 
 a {
-    font-family: Roboto, serif;
-    font-weight: 700;
+    font-family: AileronBlack, sans-serif;
     /* border: solid #979797;
     border-width: 1px 1px;
     border-radius: 1rem;
@@ -189,7 +216,7 @@ a:focus-within {
     margin: 3rem 0 1rem;
     /* max-width: 1280px; */
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
 }
 
 .nav-items {
