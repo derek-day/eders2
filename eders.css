@@ -237,12 +237,25 @@ a:focus-within {
 
 .videobox {
     border-radius: 16px;
-    margin: 3rem 0;
+    margin: 6rem 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 100px 20px 80px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 500px;
+    max-height: 800px;
+    height: calc(100vh - 165px);
+    position: relative;
 }
 
 #herovid {
     border-radius: 16px;
-    position: absolute;
+    /* position: absolute; */
     max-width: 1280px;
 }
 
@@ -250,17 +263,13 @@ a:focus-within {
     text-align: left;
     position: relative;
     position: absolute;
-    bottom: 200px;
-    right: 400px;
+    bottom: 175px;
+    right: 175px;
     padding: 0;
     margin: 0;
 
     h1,h2,h3 {
         color: black;
-    }
-
-    a {
-        margin-top: 1rem;
     }
 }
 
@@ -282,6 +291,6 @@ a:focus-within {
     font-family: AileronSemiBold, sans-serif;
     font-size: 16px;
     letter-spacing: .5px;
-    margin-top: 1rem;
+    margin: 1rem 0;
     /* letter-spacing: .01em; */
 }
