@@ -10,6 +10,18 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: "BulgariaRegular";
+    src: url('assets/fonts/Bulgaria\ Dreams\ Regular.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "BulgariaBold";
+    src: url('assets/fonts/Bulgaria\ Dreams\ Bold.ttf') format("truetype");
+    font-display: swap;
+}
+
 *,
 *::before,
 *::after {
@@ -51,15 +63,39 @@ video {
 }
 
 h1,h2,h3,h4,p,a {
-    color: #E90101;
+    color: #EB0000;
     /* font-family: Arial !important; */
 }
 
 h1 {
-    font-family: Pacifico, serif;
-    font-size: 4rem;
+    font-family: BulgariaBold, serif;
+    font-size: 5rem;
     /* line-height: 1.25rem; */
+    letter-spacing: 1px;
     /* letter-spacing: normal; */
+}
+
+.contain {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: -webkit-center;
+}
+
+.heroh1 {
+    text-align: center;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 100%; */
+    border-bottom: 1px solid #EB0000;
+    line-height:0.1em;
+    margin:10px 0 20px;
+
+    span {
+        padding: 0 30px;
+        background: #FFF7F0;
+    }
 }
 
 h2 {
@@ -71,7 +107,7 @@ h2 {
 
 h3 {
     font-family: Roboto, serif;
-    font-weight: 700;
+    font-weight: 900;
     /* font-size: 1.4rem; */
     /* line-height: 1.25rem; */
     /* letter-spacing: normal; */
@@ -150,15 +186,16 @@ a:focus-within {
 #nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 2rem 4rem;
-    max-width: 1280px;
+    margin: 3rem 0 1rem;
+    /* max-width: 1280px; */
     margin-left: auto;
     margin-right: auto
 }
 
 .nav-items {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
+    align-items: end;
 }
 
 .nav-contact {
