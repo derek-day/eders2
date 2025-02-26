@@ -118,7 +118,7 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     /* width: 100%; */
-    border-bottom: 1px solid #EB0000;
+    border-bottom: 1.5px solid #EB0000;
     line-height:0.1em;
     margin:10px 0 20px;
 
@@ -213,7 +213,7 @@ a:focus-within {
 #nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 3rem 0 1rem;
+    margin: 2.5rem 0 1.5rem;
     /* max-width: 1280px; */
     margin-left: auto;
     margin-right: auto;
@@ -229,4 +229,59 @@ a:focus-within {
     display: grid;
     gap: 0.5rem;
     justify-content: end;
+}
+
+.tightspace {
+    letter-spacing: -1px;
+}
+
+.videobox {
+    border-radius: 16px;
+    margin: 3rem 0;
+}
+
+#herovid {
+    border-radius: 16px;
+    position: absolute;
+    max-width: 1280px;
+}
+
+.herotext {
+    text-align: left;
+    position: relative;
+    position: absolute;
+    bottom: 200px;
+    right: 400px;
+    padding: 0;
+    margin: 0;
+
+    h1,h2,h3 {
+        color: black;
+    }
+
+    a {
+        margin-top: 1rem;
+    }
+}
+
+.contenth1 {
+    font-family: AileronSemiBold, sans-serif;
+    font-size: 16px;
+    letter-spacing: .5px;
+    /* letter-spacing: .01em; */
+}
+
+.contenth2 {
+    font-family: AileronHeavy, sans-serif;
+    font-size: 52px;
+    letter-spacing: 1px;
+    margin-top: 0.25rem;
+}
+
+.contenth3 {
+    font-family: AileronSemiBold, sans-serif;
+    font-size: 16px;
+    letter-spacing: .5px;
+    margin-top: 1rem;
+    /* letter-spacing: .01em; */
 }
