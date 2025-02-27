@@ -213,7 +213,7 @@ a:focus-within {
 #nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 2.5rem 0 1.5rem;
+    margin: 2rem 0 1.5rem;
     /* max-width: 1280px; */
     margin-left: auto;
     margin-right: auto;
@@ -263,8 +263,8 @@ a:focus-within {
     text-align: left;
     position: relative;
     position: absolute;
-    bottom: 175px;
-    right: 175px;
+    bottom: 150px;
+    right: 150px;
     padding: 0;
     margin: 0;
 
