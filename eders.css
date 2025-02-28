@@ -338,4 +338,42 @@ a:focus-within {
     /* box-shadow: rgba(0, 0, 0, 0) 0px 58px 15px 0px, rgba(0, 0, 0, 0.03) 0px 38px 14px 0px, rgba(0, 0, 0, 0.1) 0px 23px 12px 0px, rgba(0, 0, 0, 0.17) 0px 12px 9px 0px, rgba(0, 0, 0, 0.2) 0px 2px 5px 0px, inset 0 1.25px 1px #ffffff80; */
 }
 
-  
+.scroll-container {
+    height: 100vh;
+}
+
+.carousel-primary, .carousel.secondary {
+    top: 26%;
+    left: 100%;
+    width: 100%;
+}
+
+.carousel-primary img {
+    width: 100%;
+    margin-left: 2rem;
+    border-radius: 16px;
+}
+
+.carousel-primary {
+    display: flex;
+    justify-content: space-around;
+    animation: scroll-horizontal 20s linear infinite;
+}
+
+.carousel-secondary {
+    animation: scroll-horizontal 20s linear infinite;
+    animation-delay: 10s;
+}
+
+@keyframes scroll-horizontal {
+    0% {
+        left:100%;
+    }
+    100%{
+        left:-100%;
+    }
+}
+
+.carousel-primary: hover {
+    animation-play-state: paused;
+}
