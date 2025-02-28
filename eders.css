@@ -374,6 +374,6 @@ a:focus-within {
     }
 }
 
-.carousel-primary: hover {
+.carousel-primary:hover {
     animation-play-state: paused;
 }
