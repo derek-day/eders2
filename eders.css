@@ -52,6 +52,19 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: "DKDisplay";
+    src: url('assets/fonts/DK\ Display\ Patrol.otf') format("opentype");
+    font-display: swap;
+}
+
+:root {
+    --brown: #2D1919;
+    --red: #EB0000;
+    --white: #FFF7F0;
+    --yellow: #FBE0AD;
+}
+
 *,
 *::before,
 *::after {
@@ -75,13 +88,14 @@
 html {
   height: 100%;
   background-color: #FFF7F0;
+  background-color: var(--white);
 }
 
 body {
   min-height: 100vh;
   height: 100%;
   overflow-x: hidden;
-  overflow-x: initial;
+  /* overflow-x: initial; */
 }
 
 img,
@@ -94,6 +108,7 @@ video {
 
 h1,h2,h3,h4,p,a {
     color: #EB0000;
+    color: var(--brown);
     /* font-family: Arial !important; */
 }
 
@@ -102,6 +117,14 @@ h1 {
     font-size: 5rem;
     /* line-height: 1.25rem; */
     letter-spacing: 1px;
+    /* letter-spacing: normal; */
+}
+
+h2 {
+    font-family: DKDisplay, sans-serif;
+    font-size: 4rem;
+    /* line-height: 1.25rem; */
+    /* letter-spacing: 1px; */
     /* letter-spacing: normal; */
 }
 
@@ -119,6 +142,7 @@ h1 {
     margin-right: auto;
     /* width: 100%; */
     border-bottom: 1.5px solid #EB0000;
+    border-bottom: 1.5px solid var(--brown);
     line-height:0.1em;
     margin:10px 20px 20px;
     /* padding: 0 20px; */
@@ -126,6 +150,7 @@ h1 {
     span {
         padding: 0 30px;
         background: #FFF7F0;
+        background: var(--white);
     }
 }
 
@@ -320,6 +345,7 @@ a:focus-within {
     gap: 0.4rem;
     /* border: 1px solid #000; */
     background-color: #EB0000;
+    background-color: var(--brown);
     /* border-radius: 12px; */
     padding: 15px 60px;
     font-family: AileronBold, sans-serif;
@@ -338,8 +364,14 @@ a:focus-within {
     /* box-shadow: rgba(0, 0, 0, 0) 0px 58px 15px 0px, rgba(0, 0, 0, 0.03) 0px 38px 14px 0px, rgba(0, 0, 0, 0.1) 0px 23px 12px 0px, rgba(0, 0, 0, 0.17) 0px 12px 9px 0px, rgba(0, 0, 0, 0.2) 0px 2px 5px 0px, inset 0 1.25px 1px #ffffff80; */
 }
 
+.flavors {
+    height: 60vh;
+}
+
 .scroll-container {
-    height: 100vh;
+    /* height: 100vh; */
+    /* min-height: 20rem; */
+    height: fit-content;
     overflow-x: hidden;
 }
 
@@ -360,13 +392,17 @@ a:focus-within {
 .carousel-img {
     margin: 1rem;
     border: 1px solid #EB0000;
+    border: 1px solid var(--brown);
     border-radius: 16px;
     padding: 1.5rem;
     overflow: hidden;
+    transition: background-color .5s ease;
 }
 
 .carousel-img:hover {
     overflow: hidden;
+    background-color: #FBE0AD;
+    background-color: var(--yellow);
 
     img {
         transform: scale(1.4) translate3d(0px, 20px, 0px);
