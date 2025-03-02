@@ -124,7 +124,7 @@ h1 {
 
 h2 {
     font-family: DKDisplay, sans-serif;
-    font-size: 4rem;
+    font-size: 3rem;
     /* line-height: 1.25rem; */
     /* letter-spacing: 1px; */
     /* letter-spacing: normal; */
@@ -158,23 +158,16 @@ h2 {
     }
 }
 
-h2 {
-    /* font-family: EBGaramondThin, serif; */
-    /* font-size: 3rem; */
-    /* line-height: 1.25rem; */
-    /* letter-spacing: normal; */
-}
-
 h3 {
-    font-family: AileronBlack, sans-serif;
+    font-family: DKDisplay, sans-serif;
     /* font-size: 1.4rem; */
     /* line-height: 1.25rem; */
     /* letter-spacing: normal; */
 }
 
 h4 {
-    font-family: AileronBlack, sans-serif;
-    /* font-size: 1rem; */
+    font-family: DKDisplay, sans-serif;
+    font-size: 1.5rem;
     /* line-height: 1.25rem; */
     /* letter-spacing: normal; */
 }
@@ -450,7 +443,8 @@ a:focus-within {
 
 .carousel-primary {
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
+    justify-content: start;
     animation: scroll-horizontal 25s linear infinite;
 }
 
