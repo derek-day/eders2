@@ -151,6 +151,9 @@ h2 {
     margin:10px 20px 20px;
     /* padding: 0 20px; */
 
+    font-family: ice-cream-standard, sans-serif;
+    /* font-family: ice-cream-slant, sans-serif; */
+
     span {
         padding: 0 30px;
         background: #FFF7F0;
@@ -258,6 +261,15 @@ a:focus-within {
     margin-left: auto;
     margin-right: auto;
     padding: 0 20px;
+
+    h3 {
+        font-family: AileronBlack, sans-serif;
+        font-size: 1.1rem;
+    }
+
+    a {
+        font-size: 1.1rem;
+    }
 }
 
 .nav-items {
