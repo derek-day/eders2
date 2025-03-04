@@ -131,8 +131,8 @@ h2 {
 }
 
 .contain {
-    max-width: 1280px;
-    max-width: 1400px;
+    /* max-width: 1280px;
+    max-width: 1400px; */
     margin-left: auto;
     margin-right: auto;
     text-align: -webkit-center;
@@ -140,8 +140,8 @@ h2 {
 
 .heroh1 {
     text-align: center;
-    max-width: 1280px;
-    max-width: 1400px;
+    /* max-width: 1280px;
+    max-width: 1400px; */
     margin-left: auto;
     margin-right: auto;
     /* width: 100%; */
@@ -239,8 +239,8 @@ a:focus-within {
 #header {
     margin: 1rem 0 2rem;
     background-color: var(--brown);
-    max-width: 1260px;
-    max-width: 1380px;
+    /* max-width: 1260px;
+    max-width: 1380px; */
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -255,12 +255,15 @@ a:focus-within {
 
 #nav {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 2rem 0 1.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    margin: 0.5rem 0;
     /* max-width: 1280px; */
     margin-left: auto;
     margin-right: auto;
-    padding: 0 20px;
+    padding: 0 40px;
+    border-bottom: 2px solid var(--brown);
+    position: relative;
 
     h3 {
         font-family: AileronBlack, sans-serif;
@@ -288,30 +291,37 @@ a:focus-within {
     letter-spacing: -1px;
 }
 
+.videodiv {
+    height: auto;
+    min-height: auto;
+    max-height: 100vh;
+    position: relative;
+}
+
 .videobox {
-    border-radius: 10px;
-    margin: 4rem 0;
+    /* border-radius: 10px; */
+    /* margin: 2.6rem 0; */
 
     display: flex;
     align-items: center;
     justify-content: flex-end;
     flex-direction: column;
     /* padding: 100px 20px 80px; */
-    padding: 0 20px;
+    /* padding: 0 20px; */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* min-height: 500px; */
+    min-height: 500px;
     max-height: 800px;
     /* height: calc(100vh - 165px); */
     position: relative;
 }
 
 #herovid {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     /* position: absolute; */
-    max-width: 1280px;
-    max-width: 1400px;
+    /* max-width: 1280px;
+    max-width: 1400px; */
     width: 100%;
 }
 
