@@ -257,7 +257,7 @@ a:focus-within {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
-    margin: 0.5rem 0;
+    margin: 0.5rem 0 0;
     /* max-width: 1280px; */
     margin-left: auto;
     margin-right: auto;
@@ -311,8 +311,8 @@ a:focus-within {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 500px;
-    max-height: 800px;
+    /* min-height: 500px;
+    max-height: 800px; */
     /* height: calc(100vh - 165px); */
     position: relative;
 }
