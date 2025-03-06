@@ -116,7 +116,7 @@ h1,h2,h3,h4,p,a {
 
 h1 {
     font-family: BulgariaBold, serif;
-    font-size: 5rem;
+    font-size: 4rem;
     /* line-height: 1.25rem; */
     letter-spacing: 1px;
     /* letter-spacing: normal; */
@@ -267,11 +267,19 @@ a:focus-within {
 
     h3 {
         font-family: AileronBlack, sans-serif;
-        font-size: 1.1rem;
+        font-family: 'brevia', sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        letter-spacing: -0.5px;
+        font-size: 1rem;
     }
 
     a {
-        font-size: 1.1rem;
+        font-family: 'brevia', sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        letter-spacing: -0.5px;
+        font-size: 1rem;
     }
 }
 
