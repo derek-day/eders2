@@ -217,11 +217,16 @@ a:focus-within {
 
     div {
         background-color: rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
         padding: 1rem;
         border-radius: 8px;
         border: 1px solid #777777;
+    }
+
+    img {
+        width: 20%;
+        rotate: -30deg;
     }
 }
   
