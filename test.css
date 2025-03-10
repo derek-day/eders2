@@ -61,8 +61,10 @@
 :root {
     --brown: #2D1919;
     --red: #EB0000;
-    --white: #FFF7F0;
+    --white: #FFF;
+    --white2: #fff7f0;
     --yellow: #FBE0AD;
+    --yellow2: #FFEBBC;
     --blue: #0070F8;
 }
 
@@ -192,12 +194,16 @@ a:focus-within {
     background-size: cover;
     /* width: 90%; */
     height: auto;
-    border-radius: 24px;
-    border: 8px solid var(--blue);
+    /* border-radius: 24px; */
+    /* border: 8px solid var(--blue); */
     padding: 2rem;
-    margin: 1rem;
+    /* margin: 0.5rem; */
     box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.25);
     box-shadow: 15px 15px 50px rgba(0, 112, 248, 0.5);
+
+    h1 {
+        text-shadow: 5px 5px 0px var(--blue);
+    }
 }
 
 .hero-top {
@@ -217,11 +223,16 @@ a:focus-within {
 
     div {
         background-color: rgba(0, 0, 0, 0.4);
+        background-color: var(--white);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
         padding: 1rem;
-        border-radius: 8px;
-        border: 1px solid #777777;
+        border-radius: 16px;
+        border: 3px solid var(--blue);
+    }
+
+    p {
+        color: var(--blue);
     }
 
     img {
@@ -234,6 +245,21 @@ a:focus-within {
 
 .flavors {
     height: 60vh;
+    background-color: var(--yellow);
+    background-color: var(--yellow2);
+
+    h2 {
+        font-size: 8rem;
+        color: var(--blue);
+        /* font-family: 'brevia', sans-serif; */
+        /* font-weight: 800; */
+        text-align: center;
+        padding-top: 4rem;
+    }
+
+    h4 {
+        color: var(--blue);
+    }
 }
 
 .scroll-container {
