@@ -290,6 +290,8 @@ a:focus-within {
         text-wrap: balance;
         line-height: 1;
         padding-bottom: 0.25rem;
+        margin: 0 auto;
+        max-width: 80%;
     }
 
     p {
@@ -305,10 +307,10 @@ a:focus-within {
 
 .text-box {
     margin: 0 auto;
-    /* max-width: 400px; */
+    max-width: 400px;
     text-align: center;
     background-color: var(--white);
-    padding: 2rem;
+    padding: 1rem;
     align-items: center;
     display: grid;
     /* gap: 0.5rem; */
