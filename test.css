@@ -144,8 +144,9 @@ h1 {
     font-family: ice-cream-slant, serif;
     font-family: DKDisplay, sans-serif;
     font-size: 5rem;
+    letter-spacing: -0.01em;
     /* line-height: 1.25rem; */
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
     /* letter-spacing: normal; */
 }
 
