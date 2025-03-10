@@ -111,7 +111,7 @@ body {
 
 ::-webkit-scrollbar
 {
-	width: 12px;
+	width: 9px;
 	background-color: #fff;
 }
 
@@ -236,7 +236,9 @@ a:focus-within {
         font-weight: 800;
         font-style: normal;
         letter-spacing: -0.5px;
+        letter-spacing: -0.02em;
         font-size: 1rem;
+        font-size: 16px;
         color: var(--blue);
     }
 
@@ -246,6 +248,7 @@ a:focus-within {
         font-style: normal;
         letter-spacing: -0.5px;
         font-size: 1rem;
+        font-size: 16px;
         color: var(--blue);
     }
 }
@@ -301,7 +304,7 @@ a:focus-within {
 
 .text-box {
     margin: 0 auto;
-    max-width: 400px;
+    /* max-width: 400px; */
     text-align: center;
     background-color: var(--white);
     padding: 2rem;
@@ -309,6 +312,8 @@ a:focus-within {
     display: grid;
     /* gap: 0.5rem; */
     border: 3px solid var(--blue);
+    position: relative;
+    border-radius: 12px;
 }
 
 .button-wrapper {
@@ -385,12 +390,13 @@ a:focus-within {
     background-color: var(--yellow2);
 
     h2 {
-        font-size: 8rem;
+        font-size: 6.5rem;
         color: var(--blue);
         /* font-family: 'brevia', sans-serif; */
         /* font-weight: 800; */
         text-align: center;
         padding-top: 4rem;
+        letter-spacing: -0.01em;
     }
 
     h4 {
@@ -492,4 +498,10 @@ a:focus-within {
   -moz-animation-play-state: paused;
   -o-animation-play-state: paused;
   animation-play-state: paused;
+}
+
+.story {
+    background-color: var(--blue);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
