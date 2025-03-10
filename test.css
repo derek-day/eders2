@@ -318,6 +318,8 @@ a:focus-within {
     border: 3px solid var(--blue);
     position: relative;
     border-radius: 12px;
+    transform-style: preserve-3d;
+    animation: heroFade 1s;
 }
 
 .button-wrapper {
@@ -386,7 +388,10 @@ a:focus-within {
     }
 }
   
-
+@keyframes heroFade {
+    0% { opacity: 0; transform: translate3d(0px, 90px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);}
+    100% { opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);}
+}
 
 .flavors {
     height: 60vh;
