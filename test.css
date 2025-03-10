@@ -189,6 +189,58 @@ a:focus-within {
     }    
 }
 
+#nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    margin: 0.75rem 0 0;
+    /* margin: 0.75rem 0 0.5rem 0; */
+    /* max-width: 1280px; */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 40px;
+    padding: 0 40px 0.5rem;
+    border-bottom: 3px solid var(--blue);
+    position: relative;
+    
+    h1 {
+        color: var(--blue);
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    h3 {
+        font-family: AileronBlack, sans-serif;
+        font-family: 'brevia', sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        letter-spacing: -0.5px;
+        font-size: 1rem;
+        color: var(--blue);
+    }
+
+    a {
+        font-family: 'brevia', sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        letter-spacing: -0.5px;
+        font-size: 1rem;
+        color: var(--blue);
+    }
+}
+
+.nav-items {
+    display: flex;
+    gap: 2rem;
+    align-items: end;
+}
+
+.nav-contact {
+    display: grid;
+    gap: 0.5rem;
+    justify-content: end;
+}
+
 .hero {
     background-image: url("assets/images/pic2.jpg");
     background-size: cover;
@@ -229,6 +281,8 @@ a:focus-within {
         padding: 1rem;
         border-radius: 16px;
         border: 3px solid var(--blue);
+        max-width: 400px;
+        justify-self: center;
     }
 
     p {
