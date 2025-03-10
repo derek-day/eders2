@@ -284,6 +284,8 @@ a:focus-within {
         font-family: 'brevia', sans-serif;
         font-weight: 800;
         text-wrap: balance;
+        line-height: 1;
+        padding-bottom: 0.25rem;
     }
 
     p {
