@@ -204,6 +204,16 @@ a:focus-within {
     padding: 0; */
 }
 
+.fade {
+    opacity: 0;
+    transition-duration: 300ms;
+}
+  
+.fade.active {
+    opacity: 1;
+    animation: fadeInUp .6s cubic-bezier(0.68, -0.6, 0.32, 1.6) both;
+}  
+
 @keyframes returnToOrigin {
     100% {
         transform: translate(0);
@@ -285,12 +295,13 @@ a:focus-within {
     /* width: 90%; */
     height: auto;
     height: 91.5dvh;
+    height: 95dvh;
     /* border-radius: 24px; */
     /* border: 8px solid var(--blue); */
     padding: 2rem;
     /* margin: 0.5rem; */
-    box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.25);
-    box-shadow: 15px 15px 50px rgba(0, 112, 248, 0.5);
+    /* box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.25);
+    box-shadow: 15px 15px 50px rgba(0, 112, 248, 0.5); */
     display: flex;
     align-items: center;
     animation: .4s .2s heroFade both;
@@ -526,6 +537,45 @@ a:focus-within {
   -o-animation-play-state: paused;
   animation-play-state: paused;
 }
+
+.hours {
+    background-color: var(--blue);
+
+    h2 {
+        color: var(--white);
+        max-width: 800px;
+        text-align: center;
+        letter-spacing: -.05em;
+        font-size: clamp(4vw, 60px);
+        font-size: 60px;
+        text-wrap: balance;
+        text-wrap: wrap;
+        line-height: 1;
+        font-family: 'brevia', sans-serif;
+        font-weight: 800;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+}
+
+.scoop {
+    h1 {
+        color: var(--blue);
+    }
+
+    h2 {
+        color: var(--blue);
+    }
+
+    p {
+        color: var(--blue);
+    }
+}
+
+.scooptext {
+    margin: 0 auto;
+}
+
 
 .story {
     background-color: var(--blue);

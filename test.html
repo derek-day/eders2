@@ -71,6 +71,14 @@
             </div>  
           </div>
 
+          <!-- <div class="text-box">
+            <h3>Hours</h3>
+            <p>Wednesday - Friday: 4PM - 8PM</p>
+            <p>Saturday &#38; Sunday: 2PM - 8PM</p>
+            <p>Closed Monday &#38; Tuesday</p>
+            <p>Cash or Check only</p>
+          </div> -->
+
           <!-- boxes -->
            <!-- <div class="hero-box">
             <div>
@@ -86,7 +94,7 @@
     </div>
     
     <div class="contain flavors">
-      <h2 class="flavors-h2">Popular Scoop Flavors</h2>
+      <h2 class="flavors-h2 fade">Popular Scoop Flavors</h2>
 
       <div class="scroll-container">
         <div class="carousel-primary">
@@ -168,33 +176,64 @@
       </div>
     </div>
 
-    <div class="contain story">
-        <div class="story-image">
-            <img src="assets/images/pic.jpg" />
-        </div>
+    <div class="contain hours">
+      <h2 class="fade">Eder’s has been scooping up smiles since 1927, and doesn’t show any signs of slowing down. Visit for impeccable takes on classic flavors.</h2>
 
-        <div class="story-text">
-            <p>Since 1927, Eder’s Ice Cream has been a family tradition serving generation after generation only the finest hand-made ice cream. With favors ranging from the traditional Vanilla and Chocolate to Mandarin Orange, Eder’s has a flavor for everyone.</p>
-        </div>
+      <div class="text-box">
+        <h3>Hours</h3>
+        <p>Wednesday - Friday: 4PM - 8PM</p>
+        <p>Saturday &#38; Sunday: 2PM - 8PM</p>
+        <p>Closed Monday &#38; Tuesday</p>
+        <p>Cash or Check only</p>
+      </div>
     </div>
 
     <div class="contain scoop">
       <div class="scooptext">
-        <h1> Choose your perfect scoop</h1>
-        <p>Pick your favorite way to enjoy our ice cream! Whether you're on the go or looking to indulge at home, we've got options for everyone!</p>
+        <h1 class="fade"> Choose your perfect scoop</h1>
+        <p class="fade">Pick your favorite way to enjoy our ice cream! Whether you're on the go or looking to indulge at home, we've got options for everyone!</p>
 
-        <h2>Classic Cake Cone <span>- Crispy cone to complement any flavor.</span></h2>
-        <h2>Cup to Go <span>- Convenient paper bowl, perfect for a quick treat.</span></h2>
-        <h2>Family-Size Tub <span>- Take home a full tub of your favorite flavor!</span></h2>
+        <h2 class="fade">Classic Cake Cone <span>- Crispy cone to complement any flavor.</span></h2>
+        <h2 class="fade">Cup to Go <span>- Convenient paper bowl, perfect for a quick treat.</span></h2>
+        <h2 class="fade">Family-Size Tub <span>- Take home a full tub of your favorite flavor!</span></h2>
 
-        <a>SEE ALL FLAVORS</a>
+        <a class="fade">SEE ALL FLAVORS</a>
       </div>
       <div class="scoopimg">
         <img src="assets/images/icecream.png" />
       </div>
     </div>
 
+    <div class="contain story">
+      <div class="story-image">
+          <img src="assets/images/pic.jpg" />
+      </div>
+
+      <div class="story-text">
+          <h1 class="fade">ONE OF THE BEST IN PA</h1>
+          <p class="fade">Since 1927, Eder’s Ice Cream has been a family tradition serving generation after generation only the finest hand-made ice cream. With favors ranging from the traditional Vanilla and Chocolate to Mandarin Orange, Eder’s has a flavor for everyone.</p>
+      </div>
+  </div>
+
     <footer>
 
     </footer>
+
+    <script>
+      function animate () {
+        $(window).scroll( function(){
+          $('.fade').each( function(i){
+            var bottom_of_object = $(this).position().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            if( bottom_of_window > bottom_of_object ){
+              $(this).addClass('active');
+            }
+          }); 
+        });
+
+        document.body.classList.remove('preload');
+      }
+
+      animate();
+    </script>
   </body>
