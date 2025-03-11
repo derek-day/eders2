@@ -269,6 +269,14 @@ a:focus-within {
     display: grid;
     gap: 0.5rem;
     justify-content: end;
+
+    h3 {
+        display: grid;
+    }
+
+    img {
+        display: none;
+    }
 }
 
 .hero {
@@ -535,11 +543,21 @@ a:focus-within {
     }
 
     .nav-items-mob {
-        display: block;
+        display: grid;
     }
 
     .nav-items-desk {
         display: none;
+    }
+
+    .nav-contact {
+        h3 {
+            display: none;
+        }
+
+        img {
+            display: grid;
+        }
     }
 
     .hero {
