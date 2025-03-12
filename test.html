@@ -67,7 +67,7 @@
             <h3>FAMILY-MADE ICE CREAM</h3>
             <p>SCOOPING UP SMILES SINCE 1927</p>
             <div class="button-wrapper">
-                <a href="#">SEE MENU</a>
+                <a href="#scoop">SEE MENU</a>
             </div>  
           </div>
 
@@ -177,18 +177,28 @@
     </div>
 
     <div class="contain hours">
+      <div class="hours-images">
+        <img class="van" src="assets/images/van.png" />
+        <img class="straw" src="assets/images/straw.png" />
+      </div>
+
       <h2 class="fade">Eder’s has been scooping up smiles since 1927, and doesn’t show any signs of slowing down. Visit for impeccable takes on classic flavors.</h2>
 
-      <div class="text-box">
-        <h3>Hours</h3>
-        <p>Wednesday - Friday: 4PM - 8PM</p>
-        <p>Saturday &#38; Sunday: 2PM - 8PM</p>
-        <p>Closed Monday &#38; Tuesday</p>
-        <p>Cash or Check only</p>
+      <div class="hour-div">
+        <img class="choc" src="assets/images/choc.png" />
+        <div class="text-box fade">
+          <h3>Hours</h3>
+          <p>Wednesday - Friday: 4PM - 9PM</p>
+          <p>Saturday &#38; Sunday: 2PM - 9PM</p>
+          <p>Closed Monday &#38; Tuesday</p>
+          <br />
+          <p>Cash or Check only</p>
+        </div>
+        <img class="lem" src="assets/images/lem.png" />
       </div>
     </div>
 
-    <div class="contain scoop">
+    <div id="scoop" class="contain scoop">
       <div class="scooptext">
         <h1 class="fade"> Choose your perfect scoop</h1>
         <p class="fade">Pick your favorite way to enjoy our ice cream! Whether you're on the go or looking to indulge at home, we've got options for everyone!</p>
@@ -230,6 +240,13 @@
             }
           }); 
         });
+
+        $('.button-wrapper').on('click', function(){
+          $('html, body').animate({
+            scrollTop: $('#scoop').offset().top
+          }, 1000);
+        });
+
 
         document.body.classList.remove('preload');
       }

@@ -330,22 +330,6 @@ a:focus-within {
     }
 }
 
-.text-box {
-    margin: 0 auto;
-    max-width: 400px;
-    text-align: center;
-    background-color: var(--white);
-    padding: 1rem;
-    align-items: center;
-    display: grid;
-    /* gap: 0.5rem; */
-    border: 3px solid var(--blue);
-    position: relative;
-    border-radius: 12px;
-    transform-style: preserve-3d;
-    animation: fadeInUp .6s cubic-bezier(0.68, -0.6, 0.32, 1.6) both;
-}
-
 @keyframes heroFade {
     0% { opacity: 0;}
     100% { opacity: 1;}
@@ -540,6 +524,10 @@ a:focus-within {
 
 .hours {
     background-color: var(--blue);
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 2rem;
+    padding: 4rem 2rem;
 
     h2 {
         color: var(--white);
@@ -555,6 +543,78 @@ a:focus-within {
         font-weight: 800;
         margin: 0 auto;
         padding: 2rem;
+    }
+
+    img {
+        animation: fadeInUp 1s cubic-bezier(0.68, -0.6, 0.32, 1.6) both;
+    }
+}
+
+.van {
+    width: 200px;
+    height: 200px;
+    left: 40px;
+    top: 30px;
+    position: relative;
+}
+
+.straw {
+    width: 125px;
+    height: 125px;
+    position: relative;
+    right: 80px;
+    top: 70px;
+}
+
+.choc {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    right: 80px;
+    top: 5px;
+}
+
+.lem {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: 80px;
+    bottom: 30px;
+}
+
+.hours-images {
+    justify-items: center;
+}
+
+.hour-div {
+    justify-items: center;
+}
+
+.text-box {
+    margin: 0 auto 0;
+    max-width: 400px;
+    text-align: center;
+    background-color: var(--white);
+    padding: 1rem;
+    align-items: center;
+    display: grid;
+    /* gap: 0.5rem; */
+    border: 3px solid var(--blue);
+    position: relative;
+    border-radius: 12px;
+    transform-style: preserve-3d;
+    z-index: 2;
+    position: relative;
+    bottom: 20px;
+    
+    h3 {
+        color: var(--blue);
+        font-size: 3rem;
+        font-size: 2.5rem;
+    }
+
+    p {
+        color: var(--blue);
     }
 }
 
