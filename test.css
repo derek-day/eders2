@@ -212,6 +212,16 @@ a:focus-within {
 .fade.active {
     opacity: 1;
     animation: fadeInUp .6s cubic-bezier(0.68, -0.6, 0.32, 1.6) both;
+}
+
+.slowfade {
+    opacity: 0;
+    transition-duration: 300ms;
+}
+  
+.slowfade.active {
+    opacity: 1;
+    animation: fadeInUp 1.2s cubic-bezier(0.68, -0.6, 0.32, 1.6) both;
 }  
 
 @keyframes returnToOrigin {
@@ -327,6 +337,10 @@ a:focus-within {
         font-weight: 800;
         text-wrap: balance;
         padding-bottom: 0.5rem;
+    }
+
+    div {
+        animation: fadeInUp .6s cubic-bezier(0.68, -0.6, 0.32, 1.6) both;
     }
 }
 
@@ -546,7 +560,7 @@ a:focus-within {
     }
 
     img {
-        animation: fadeInUp 1s cubic-bezier(0.68, -0.6, 0.32, 1.6) both;
+        /* animation: fadeInUp 1s cubic-bezier(0.68, -0.6, 0.32, 1.6) both; */
     }
 }
 
