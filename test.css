@@ -72,7 +72,8 @@
     --container-ipad-landscape: 1133px;
     --container-mobile: 600px;
 
-    --spacing-container-padding-block: 2rem;
+    /* --spacing-container-padding-block: 2rem; */
+    --spacing-container-padding-block: 4rem;
     --spacing-container-padding-inline: 2rem;
     --spacing-container-padding-inline-large: 4rem;
   
@@ -439,6 +440,17 @@ a:focus-within {
 
 .block {
     background-color: var(--yellow2);
+
+    h2 {
+        font-size: 6.5rem;
+        color: var(--blue);
+        /* font-family: 'brevia', sans-serif; */
+        /* font-weight: 800; */
+        text-align: center;
+        padding-top: 4rem;
+        letter-spacing: -0.01em;
+    }
+
 }
 
 .container {
@@ -462,8 +474,11 @@ a:focus-within {
 .card {
     /* color: var(--blue); */
     background-color: var(--blue);
+    background-color: var(--white);
     padding: 1.5rem;
     border-radius: 0.25rem;
+    border-radius: 12px;
+    border: 3px solid var(--blue);
     pointer-events: auto;
   
     h3 {
@@ -473,21 +488,41 @@ a:focus-within {
       font-weight: 800;
       font-size: 1.5rem;
       color: var(--blue);
-      color: var(--white);
+      /* color: var(--white); */
 
     }
   
     p {
       &:not(:last-of-type) {
         margin-bottom: 0.75rem;
-        color: var(--white);
+        color: var(--blue);
+        /* color: var(--white); */
       }
+      color: var(--blue);
+    }
+
+    img {
+        transition: transform .5s ease;
     }
   }
+
+  .card:hover {
+    overflow: hidden;
+    /* background-color: #FBE0AD;
+    background-color: var(--yellow); */
+
+    img {
+        transform: scale(1.2) translate3d(0px, 20px, 0px);
+        transform: scale(1.1);
+        z-index: -1;
+    }
+}
+
   
   .image-content {
     margin-bottom: 1.5rem;
     border-radius: 0.25rem;
+    border-radius: 10px;
     overflow: hidden;
   }
   
@@ -712,7 +747,7 @@ a:focus-within {
     height: 150px;
     position: relative;
     right: 80px;
-    top: 5px;
+    top: 15px;
 }
 
 .lem {
@@ -720,7 +755,7 @@ a:focus-within {
     height: 100px;
     position: relative;
     left: 80px;
-    bottom: 30px;
+    bottom: 20px;
 }
 
 .hours-images {
@@ -747,6 +782,7 @@ a:focus-within {
     z-index: 2;
     position: relative;
     bottom: 20px;
+    bottom: 10px;
     
     h3 {
         color: var(--blue);
@@ -824,6 +860,14 @@ a:focus-within {
             font-size: 15px;
             padding: 0 15px;
             height: 36px;
+        }
+    }
+
+    .container {
+        padding: 1rem 1rem 2rem;
+
+        h2 {
+            font-size: 3rem;
         }
     }
 }
