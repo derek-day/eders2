@@ -74,6 +74,7 @@
 
     /* --spacing-container-padding-block: 2rem; */
     --spacing-container-padding-block: 4rem;
+    /* --spacing-container-padding-block: 6rem; */
     --spacing-container-padding-inline: 2rem;
     --spacing-container-padding-inline-large: 4rem;
   
@@ -447,7 +448,7 @@ a:focus-within {
         /* font-family: 'brevia', sans-serif; */
         /* font-weight: 800; */
         text-align: center;
-        padding-top: 4rem;
+        /* padding-top: 4rem; */
         letter-spacing: -0.01em;
     }
 
@@ -487,6 +488,7 @@ a:focus-within {
       font-family: 'brevia', sans-serif;
       font-weight: 800;
       font-size: 1.5rem;
+      letter-spacing: -.01em;
       color: var(--blue);
       /* color: var(--white); */
 
@@ -499,6 +501,8 @@ a:focus-within {
         /* color: var(--white); */
       }
       color: var(--blue);
+      font-size: 16px;
+      letter-spacing: -0.02em;
     }
 
     img {
