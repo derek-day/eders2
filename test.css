@@ -66,6 +66,23 @@
     --yellow: #FBE0AD;
     --yellow2: #FFEBBC;
     --blue: #0070F8;
+
+    --width-grid-base: 1440px;
+    --container-ipad: 744px;
+    --container-ipad-landscape: 1133px;
+    --container-mobile: 600px;
+
+    --spacing-container-padding-block: 2rem;
+    --spacing-container-padding-inline: 2rem;
+    --spacing-container-padding-inline-large: 4rem;
+  
+    @media (max-width: 1590px) {
+      --spacing-container-padding-inline: 4rem;
+    }
+  
+    @media (max-width: 1439px) {
+      --spacing-container-padding-inline: 3rem;
+    }  
 }
 
 *,
@@ -419,6 +436,116 @@ a:focus-within {
         rotate: -30deg;
     }
 }
+
+.block {
+    background-color: var(--yellow2);
+}
+
+.container {
+    max-width: var(--width-grid-base);
+    margin: auto;
+    padding: var(--spacing-container-padding-block) var(--spacing-container-padding-inline);
+
+    /* @if $width-grid-base > 1440 {
+      @media (min-width: $container-ipad-landscape) and (max-width: 140rem + 4rem) {
+        padding-inline: var(--spacing-container-padding-inline-large);
+      }
+    } */
+  }
+
+@media screen and (min-width: 1441px) {
+    .container {
+        padding-inline: var(--spacing-container-padding-inline-large);
+    }
+}
+  
+.card {
+    /* color: var(--blue); */
+    background-color: var(--blue);
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+    pointer-events: auto;
+  
+    h3 {
+      margin-bottom: 1rem;
+      /* font-family: 'Playfair Display', serif; */
+      font-family: 'brevia', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--blue);
+      color: var(--white);
+
+    }
+  
+    p {
+      &:not(:last-of-type) {
+        margin-bottom: 0.75rem;
+        color: var(--white);
+      }
+    }
+  }
+  
+  .image-content {
+    margin-bottom: 1.5rem;
+    border-radius: 0.25rem;
+    overflow: hidden;
+  }
+  
+  .block-carousel {
+    overflow: hidden;
+    pointer-events: none;
+  
+    &[data-animated="true"] {
+      @media (prefers-reduced-motion: reduce) {
+        overflow: visible;
+      }
+    }
+  
+    .carousel-items {
+      list-style: none;
+      align-items: start;
+      display: grid;
+      gap: 4rem;
+      grid-auto-columns: 20rem;
+      grid-auto-flow: column;
+      padding-bottom: var(--spacing-container-padding-block);
+  
+      @media (max-width: 600px) {
+        gap: 2rem;
+      }
+  
+      @media (min-width: 1133px) {
+        grid-auto-columns: 30rem;
+      }
+  
+      @media (prefers-reduced-motion: reduce) {
+        overflow: visible;
+        overflow-x: scroll;
+      }
+    }
+  
+    &[data-animated="true"] .carousel-items {
+      &:hover,
+      &:focus {
+        animation-play-state: paused;
+      }
+  
+      @media (prefers-reduced-motion: no-preference) {
+        animation-duration: 60s;
+        animation-iteration-count: infinite;
+        animation-name: scroll;
+        animation-timing-function: linear;
+        width: max-content;
+      }
+  
+    }
+  }
+  
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - .5rem));
+    }
+  }
 
 .flavors {
     height: 60vh;
