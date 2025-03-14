@@ -489,6 +489,7 @@ a:focus-within {
       font-weight: 800;
       font-size: 1.5rem;
       letter-spacing: -.01em;
+      letter-spacing: -0.05em;
       color: var(--blue);
       /* color: var(--white); */
 
@@ -723,6 +724,7 @@ a:focus-within {
         font-weight: 800;
         margin: 0 auto;
         padding: 2rem;
+        padding: 2rem 0;
     }
 
     img {
@@ -826,10 +828,13 @@ a:focus-within {
 
 @media screen and (max-width: 900px) {
     #nav {
-        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-columns: 1fr 3fr 1fr;
+        padding: 1rem 20px 0.75rem;
 
         h1 {
             font-size: 2rem;
+            font-size: 1.8rem;
+            line-height: 0.9;
         }
     }
 
@@ -852,12 +857,14 @@ a:focus-within {
     }
 
     .hero {
+        height: 100dvh;
+
         h3 {
             font-size: clamp(22px, 6.5vw, 30px);
         }
 
         p {
-            font-size: calc(16p / 1.1);
+            font-size: calc(16px / 1.1);
         }
 
         a {
@@ -868,10 +875,82 @@ a:focus-within {
     }
 
     .container {
-        padding: 1rem 1rem 2rem;
+        padding: 3rem 1rem 2rem;
 
         h2 {
             font-size: 3rem;
+            font-size: calc(64px / 0.9);
+            line-height: 0.9;
         }
     }
+
+    .card {
+        h3 {
+            font-size: clamp(22px, 6.5vw, 30px);
+            letter-spacing: -0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: calc(16px / 1.1);
+        }
+    }
+
+    .image-content {
+        margin-bottom: 1rem;
+    }
+
+    .hours {
+        display: block;
+        padding: 4rem 2rem 0rem;
+
+        h2 {
+            font-size: 7vw;
+            padding: 1rem;
+            top: -70px;
+            position: relative;
+        }
+
+        .text-box {
+            top: 40px;
+            
+            h3 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: calc(16px / 1.1);
+            }
+        }
+    }
+
+    .van {
+        width: 150px;
+        height: 150px;
+        top: -30px;
+        left: 100px;
+    }
+
+    .straw {
+        width: 60px;
+        height: 60px;
+        top: -70px;
+        right: 140px;
+    }
+
+    .choc {
+        width: 80px;
+        height: 80px;
+        top: -60px;
+        right: 140px;
+    }
+
+    .lem {
+        width: 100px;
+        height: 100px;
+        bottom: 0;
+        top: -280px;
+        left: 120px;
+    }
+
 }
