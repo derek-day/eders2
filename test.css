@@ -902,17 +902,24 @@ a:focus-within {
 
     .hours {
         display: block;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
         padding: 4rem 2rem 0rem;
+        padding: 3rem 1rem;
 
         h2 {
             font-size: 7vw;
-            padding: 1rem;
-            top: -70px;
+            padding: 0 2rem;
+            /* top: -70px; */
             position: relative;
         }
 
         .text-box {
-            top: 40px;
+            /* top: 40px; */
+            display: none;
             
             h3 {
                 font-size: 2rem;
@@ -924,33 +931,57 @@ a:focus-within {
         }
     }
 
+    .hours-images {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex: 100%;
+    }
+
+    .hour-div {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex: 100%;
+    }
+
     .van {
         width: 150px;
         height: 150px;
-        top: -30px;
-        left: 100px;
+        top: 0;
+        left: 0;
+        /* top: -30px;
+        left: 100px; */
     }
 
     .straw {
         width: 60px;
         height: 60px;
-        top: -70px;
-        right: 140px;
+        top: 0;
+        right: 0;
+        /* top: -70px;
+        right: 140px; */
     }
 
     .choc {
-        width: 80px;
-        height: 80px;
-        top: -60px;
-        right: 140px;
+        width: 120px;
+        height: 120px;
+        top: 0;
+        right: 0;
+        /* top: -60px;
+        right: 140px; */
     }
 
     .lem {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
         bottom: 0;
-        top: -280px;
-        left: 120px;
+        top: 0;
+        left: 0;
+        /* top: -280px;
+        left: 120px; */
     }
 
 }
