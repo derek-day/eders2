@@ -329,7 +329,7 @@
         $(window).scroll( function(){
           $('.fade').each( function(i){
             var bottom_of_object = $(this).position().top + $(this).outerHeight();
-            var bottom_of_window = $(window).scrollTop() + $(window).height() + 50;
+            var bottom_of_window = $(window).scrollTop() + $(window).height() + 100;
             if( bottom_of_window > bottom_of_object ){
               $(this).addClass('active');
             }
