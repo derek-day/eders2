@@ -858,6 +858,14 @@ a:focus-within {
     }
 }
 
+.story-mob {
+    display: none;
+}
+
+.story-desk {
+    display: grid;
+}
+
 @media screen and (max-width: 900px) {
     #nav {
         grid-template-columns: 1fr 3fr 1fr;
@@ -1021,6 +1029,35 @@ a:focus-within {
         left: 0;
         /* top: -280px;
         left: 120px; */
+    }
+
+    .story {
+        display: block;
+    }
+
+    .story-text {
+        /* padding: 0; */
+        padding: 60px 20px 0;
+    }
+
+    .story-mob {
+        display: block;
+
+        h2 {
+            font-size: 90px;
+            margin: 0 0 36px;
+            padding: 0 0 18px;
+            border-bottom: 2px solid var(--white);
+        }
+
+        p {
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+
+    .story-desk {
+        display: none;
     }
 
 }
