@@ -870,7 +870,7 @@ a:focus-within {
         height: 100dvh;
         height: calc(100dvh + 70);
         background-attachment: scroll;
-        background-position: center;
+        /* background-position: center; */
         background-attachment: fixed;
         /* position: fixed; */
         top: 0;
