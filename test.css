@@ -243,6 +243,16 @@ a:focus-within {
     animation: fadeInUp 1.2s cubic-bezier(0.68, -0.6, 0.32, 1.6) both;
 }  
 
+.quickfade {
+    opacity: 0;
+    transition-duration: 300ms;
+}
+  
+.quickfade.active {
+    opacity: 1;
+    animation: fadeInUp .6s cubic-bezier(0.68, -0.6, 0.32, 1.6) both;
+}
+
 @keyframes returnToOrigin {
     100% {
         transform: translate(0);

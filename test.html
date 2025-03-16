@@ -101,7 +101,7 @@
           </header>
         </div>
 
-      <div class="fade">
+      <div class="quickfade">
       <ul class="carousel-items">
         <li class="card">
           <div class="image-content">
@@ -342,7 +342,16 @@
               $(this).addClass('active');
             }
           }); 
+
+          $('.quickfade').each( function(i){
+            var bottom_of_object = $(this).position().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height() + 175;
+            if( bottom_of_window > bottom_of_object ){
+              $(this).addClass('active');
+            }
+          }); 
         });
+        
 
         $('.button-wrapper').on('click', function(){
           $('html, body').animate({
