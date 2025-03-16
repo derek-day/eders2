@@ -836,6 +836,28 @@ a:focus-within {
     grid-template-columns: 1fr 1fr;
 }
 
+.story-text {
+    padding: 35px 40px 0;
+    overflow: hidden;
+    height: inherit;
+
+    h2 {
+        font-size: 170px;
+        margin-bottom: 90px;
+        white-space: wrap;
+        position: relative;
+        letter-spacing: -0.02em;
+        line-height: 0.9;
+    }
+
+    p {
+        font-size: 20px;
+        letter-spacing: -0.02em;
+        font-weight: 600;
+        line-height: 1.4;
+    }
+}
+
 @media screen and (max-width: 900px) {
     #nav {
         grid-template-columns: 1fr 3fr 1fr;
