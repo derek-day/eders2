@@ -1115,6 +1115,10 @@ a:focus-within {
     .story-text {
         /* padding: 0; */
         padding: 60px 20px 0;
+
+        .text-box {
+            margin: 40px 0;
+        }
     }
 
     .story-mob {
