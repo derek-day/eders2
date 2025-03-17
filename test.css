@@ -838,12 +838,15 @@ a:focus-within {
 
 .story-text {
     padding: 35px 40px 0;
+    /* padding: 35px 60px 0 40px; */
     overflow: hidden;
     height: inherit;
 
     h2 {
-        font-size: 170px;
+        /* font-size: 170px; */
+        font-size: 140px;
         margin-bottom: 90px;
+        /* margin-bottom: 50px; */
         white-space: wrap;
         position: relative;
         letter-spacing: -0.02em;
@@ -855,6 +858,7 @@ a:focus-within {
         letter-spacing: -0.02em;
         font-weight: 600;
         line-height: 1.4;
+        text-wrap: balance;
     }
 }
 
@@ -864,6 +868,7 @@ a:focus-within {
 
 .story-desk {
     display: grid;
+    display: block;
 }
 
 @media screen and (max-width: 900px) {

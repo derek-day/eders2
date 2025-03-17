@@ -324,7 +324,7 @@
       <div class="story-text story-mob">
         <h2 class="fade">ONE OF <br/>THE BEST <br />IN PA</h2>
         <p class="fade">Since 1927, Eder’s Ice Cream has been a family tradition serving generation after generation only the finest hand-made ice cream. With favors ranging from the traditional Vanilla and Chocolate to Mandarin Orange, Eder’s has a flavor for everyone.</p>
-    </div>
+      </div>
 
       <div class="story-image story-mob">
         <img src="assets/images/pic.jpg" />
@@ -340,7 +340,7 @@
         $(window).scroll( function(){
           $('.fade').each( function(i){
             var bottom_of_object = $(this).position().top + $(this).outerHeight();
-            var bottom_of_window = $(window).scrollTop() + $(window).height() + 100;
+            var bottom_of_window = $(window).scrollTop() + $(window).height() + 150;
             if( bottom_of_window > bottom_of_object ){
               $(this).addClass('active');
             }
@@ -348,7 +348,7 @@
 
           $('.slowfade').each( function(i){
             var bottom_of_object = $(this).position().top + $(this).outerHeight();
-            var bottom_of_window = $(window).scrollTop() + $(window).height() + 100;
+            var bottom_of_window = $(window).scrollTop() + $(window).height() + 150;
             if( bottom_of_window > bottom_of_object ){
               $(this).addClass('active');
             }
@@ -356,7 +356,7 @@
 
           $('.quickfade').each( function(i){
             var bottom_of_object = $(this).position().top + $(this).outerHeight();
-            var bottom_of_window = $(window).scrollTop() + $(window).height() + 175;
+            var bottom_of_window = $(window).scrollTop() + $(window).height() + 200;
             if( bottom_of_window > bottom_of_object ){
               $(this).addClass('active');
             }
