@@ -514,6 +514,7 @@ a:focus-within {
       color: var(--blue);
       font-size: 16px;
       letter-spacing: -0.02em;
+      font-weight: 500;
     }
 
     img {
@@ -811,24 +812,63 @@ a:focus-within {
     }
 }
 
-.scoop {
+#scoop {
+    display: flex;
+    padding: 0 60px;
+    padding: 30px 60px;
+    /* gap: 80px; */
+    align-items: center;
+    justify-self: center;
+    max-width: 1400px;
+
     h1 {
         color: var(--blue);
-    }
-
-    h2 {
-        color: var(--blue);
+        letter-spacing: -0.02em;
+        line-height: 0.9;
+        margin-bottom: 1.5rem;
+        font-size: 80px;
     }
 
     p {
         color: var(--blue);
+        margin: 1rem 0;
+        /* max-width: 50%; */
+        /* max-width: 80%; */
+        font-family: 'brevia', sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        letter-spacing: -0.02em;
+        line-height: 1.4;
+        /* text-wrap: balance; */
+
     }
+
+    img {
+        /* width: 65%; */
+        max-width: 300px;
+        max-width: 400px;
+        height: auto;
+        top: 50px;
+        position: relative;
+        z-index: -4;
+    }
+}
+
+.highweight {
+    font-weight: 800;
+}
+
+.bullet {
+    padding-left: 1rem;
 }
 
 .scooptext {
     margin: 0 auto;
+    flex: 1;
+    max-width: 50%;
+    /* text-align: -webkit-right; */
+    /* justify-items: right; */
 }
-
 
 .story {
     background-color: var(--blue);
@@ -838,6 +878,7 @@ a:focus-within {
 
 .story-text {
     padding: 35px 40px 0;
+    padding: 45px 45px 0;
     /* padding: 35px 60px 0 40px; */
     overflow: hidden;
     height: inherit;
@@ -845,7 +886,7 @@ a:focus-within {
     h2 {
         /* font-size: 170px; */
         font-size: 140px;
-        margin-bottom: 90px;
+        margin-bottom: 60px;
         /* margin-bottom: 50px; */
         white-space: wrap;
         position: relative;
@@ -859,6 +900,10 @@ a:focus-within {
         font-weight: 600;
         line-height: 1.4;
         text-wrap: balance;
+    }
+
+    .text-box {
+        margin-top: 60px;
     }
 }
 
@@ -1036,6 +1081,33 @@ a:focus-within {
         left: 120px; */
     }
 
+    #scoop {
+        flex-direction: column;
+        /* text-align: center; */
+        padding: 30px 30px;
+        padding: 60px 30px;
+
+        img {
+            top: 0;
+            max-width: 200px;
+            max-width: 125px;
+        }
+
+        h1 {
+            font-size: calc(64px / 0.9);        
+            font-size: 55px;
+        }
+
+        p {
+            font-size: calc(16px / 1.1);
+        }
+    }
+
+    .scooptext {
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
     .story {
         display: block;
     }
@@ -1057,6 +1129,7 @@ a:focus-within {
 
         p {
             font-size: 14px;
+            font-size: calc(16px / 1.1);
             font-weight: 500;
         }
     }
