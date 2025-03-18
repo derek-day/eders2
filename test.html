@@ -329,6 +329,7 @@
             <p>Cash or Check only</p>
           </div>
   
+          <div id="googleMap" class="fade"></div>
       </div>
       
       <div class="story-text story-mob">
@@ -344,6 +345,7 @@
           <p>Cash or Check only</p>
         </div>
 
+        <div id="googleMap" class="fade"></div>
       </div>
 
       <div class="story-image story-mob">
@@ -425,5 +427,17 @@
       }
 
       animate();
+
+      function myMap() {
+        var mapProp= {
+          center:new google.maps.LatLng(41.29381989003117,-76.906545),
+          zoom:16,
+
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+      }
     </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDS-eR3ZI__iigPwscpseRYOi8PU0jM_Q8&callback=myMap"></script>
+
   </body>
