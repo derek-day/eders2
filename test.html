@@ -29,15 +29,13 @@
 
     <nav id="nav" class="contain">
         <div class="nav-items-mob">
-          <!-- <a>MENU</a> -->
           <img src="assets/images/menu.svg" width="28px" height="28px" />
         </div>
 
         <div class="nav-items-desk">
-          <a>OUR FLAVORS</a>
-          <a>OUR STORY</a>
-          <!-- <a>Menu</a>
-          <a>Contact</a> -->
+          <a id="flavorlink" href="#flavors">OUR FLAVORS</a>
+          <a id="menulink" href="#scoop">OUR MENU</a>
+          <a id="storylink" href="#story">OUR STORY</a>
         </div>
 
         <div class="nav-title">
@@ -45,58 +43,23 @@
         </div>
 
         <div class="nav-contact">
-            <!-- change to phone icon on mobile -->
-            <h3 class="tightspace">(570) 772-3767</h3>
-            <!-- <img src="assets/images/phone.svg" width="30px" height="30px" /> -->
+            <a class="tightspace" href="tel:570-772-3767">(570) 772-3767</a>
+            <!-- <h3 class="tightspace">(570) 772-3767</h3> -->
             <img src="assets/images/phone-full.svg" width="28px" height="28px" />
-            <!-- <h4>Wed-Fri: 4PM - 8PM</h4>
-            <h4>Sat-Sun: 2PM - 8PM</h4> -->
         </div>
     </nav>
 
-    <div class="hero">
-        <!-- top text -->
-         <!-- <div class="hero-top">
-            <p>Scooping up smiles since 1927</p>
-            <p class="number">(570) 772-3767</p>
-         </div> -->
-        
-         <!-- hero text -->
-          <!-- <div class="hero-title">
-            <h1>Eder's Ice Cream</h1>
-          </div> -->
-          
+    <div class="hero">          
           <div class="text-box">
             <h3>FAMILY-MADE ICE CREAM</h3>
             <p>SCOOPING UP SMILES SINCE 1927</p>
             <div class="button-wrapper">
-                <a href="#scoop">SEE MENU</a>
+                <a href="#flavors">SEE FLAVORS</a>
             </div>  
           </div>
-
-          <!-- <div class="text-box">
-            <h3>Hours</h3>
-            <p>Wednesday - Friday: 4PM - 8PM</p>
-            <p>Saturday &#38; Sunday: 2PM - 8PM</p>
-            <p>Closed Monday &#38; Tuesday</p>
-            <p>Cash or Check only</p>
-          </div> -->
-
-          <!-- boxes -->
-           <!-- <div class="hero-box">
-            <div>
-                <p>Flavors</p>
-                <img src="assets/images/icecrem.png" />
-                <p>With over 20 flavors available, we are constantly changing throughout the seasons! <u>Click here</u> to see what's currently available!</p>
-            </div>
-            <div>
-                <p>Menu</p>
-                <p>From cones to tubs, we have any option you need to get your Eder's fix! <u>Click here</u> to see all ways to indulge!</p>
-            </div>
-           </div> -->
     </div>
 
-    <section class="block block-carousel">
+    <section id="flavors" class="block block-carousel">
         <div class="container">
           <header>
             <h2 class="fade">Popular Flavors</h2>
@@ -216,63 +179,6 @@
       </div>
       </section>
     
-    <!-- <div class="contain flavors">
-      <h2 class="flavors-h2 fade">Popular Scoop Flavors</h2>
-
-      <div class="scroll-container">
-        <div class="carousel-primary">
-          <div class="carousel-div">
-            <div class="carousel-img">
-              <img src="assets/images/icecream.png" alt="Ice cream" />
-            </div>
-            <h4>Peanut Butter</h4>
-          </div>
-          <div class="carousel-div">
-            <div class="carousel-img">
-              <img src="assets/images/icecream.png" alt="Ice cream" />
-            </div>
-            <h4>Peanut Butter</h4>
-          </div>
-          <div class="carousel-div">
-            <div class="carousel-img">
-              <img src="assets/images/icecream.png" alt="Ice cream" />
-            </div>
-            <h4>Peanut Butter</h4>
-          </div>
-          <div class="carousel-div">
-            <div class="carousel-img">
-              <img src="assets/images/icecream.png" alt="Ice cream" />
-            </div>
-            <h4>Peanut Butter</h4>
-          </div>
-          <div class="carousel-div">
-            <div class="carousel-img">
-              <img src="assets/images/icecream.png" alt="Ice cream" />
-            </div>
-            <h4>Peanut Butter</h4>
-          </div>
-          <div class="carousel-div">
-            <div class="carousel-img">
-              <img src="assets/images/icecream.png" alt="Ice cream" />
-            </div>
-            <h4>Peanut Butter</h4>
-          </div>
-          <div class="carousel-div">
-            <div class="carousel-img">
-              <img src="assets/images/icecream.png" alt="Ice cream" />
-            </div>
-            <h4>Peanut Butter</h4>
-          </div>
-          <div class="carousel-div">
-            <div class="carousel-img">
-              <img src="assets/images/icecream.png" alt="Ice cream" />
-            </div>
-            <h4>Peanut Butter</h4>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
     <div class="contain hours">
       <div class="hours-images">
         <img class="van slowfade" src="assets/images/van.png" />
@@ -283,14 +189,6 @@
 
       <div class="hour-div">
         <img class="choc slowfade" src="assets/images/choc.png" />
-        <!-- <div class="text-box fade">
-          <h3>Hours</h3>
-          <p>Wednesday - Friday: 4PM - 9PM</p>
-          <p>Saturday &#38; Sunday: 2PM - 9PM</p>
-          <p>Closed Monday &#38; Tuesday</p>
-          <br />
-          <p>Cash or Check only</p>
-        </div> -->
         <img class="lem slowfade" src="assets/images/lem.png" />
       </div>
     </div>
@@ -304,14 +202,13 @@
         <p class="fade bullet"><span class="highweight">&#8226; Cup to Go</span> - Convenient paper bowl, perfect for a quick treat.</p>
         <p class="fade bullet"><span class="highweight">&#8226; Family-Size Tub</span> - Take home a full tub of your favorite flavor!</p>
 
-        <!-- <a class="fade">SEE OUR FLAVORS</a> -->
       </div>
       <div class="scoopimg">
         <img class="slowfade" src="assets/images/icecream.png" />
       </div>
     </div>
 
-    <div class="contain story">
+    <div id="story" class="contain story">
       <div class="story-image story-desk">
           <img src="assets/images/pic.jpg" />
       </div>
@@ -329,7 +226,8 @@
             <p>Cash or Check only</p>
           </div>
   
-          <div id="googleMap" class="fade"></div>
+          <iframe id="googleMap" class="fade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3587.0947695344194!2d-76.90912012353881!3d41.29357440180836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89cfa379fda25bc9%3A0x6a49108b9f023aa!2sEder&#39;s%20Ice%20Cream!5e1!3m2!1sen!2sus!4v1742257690589!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
       </div>
       
       <div class="story-text story-mob">
@@ -345,7 +243,7 @@
           <p>Cash or Check only</p>
         </div>
 
-        <div id="googleMap" class="fade"></div>
+        <iframe id="googleMap" class="fade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3587.0947695344194!2d-76.90912012353881!3d41.29357440180836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89cfa379fda25bc9%3A0x6a49108b9f023aa!2sEder&#39;s%20Ice%20Cream!5e1!3m2!1sen!2sus!4v1742257690589!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
 
       <div class="story-image story-mob">
@@ -388,7 +286,25 @@
 
         $('.button-wrapper').on('click', function(){
           $('html, body').animate({
+            scrollTop: $('#flavors').offset().top
+          }, 1000);
+        });
+
+        $('#flavorlink').on('click', function(){
+          $('html, body').animate({
+            scrollTop: $('#flavors').offset().top
+          }, 1000);
+        });
+
+        $('#menulink').on('click', function(){
+          $('html, body').animate({
             scrollTop: $('#scoop').offset().top
+          }, 1000);
+        });
+
+        $('#storylink').on('click', function(){
+          $('html, body').animate({
+            scrollTop: $('#story').offset().top
           }, 1000);
         });
 
@@ -427,17 +343,6 @@
       }
 
       animate();
-
-      function myMap() {
-        var mapProp= {
-          center:new google.maps.LatLng(41.29381989003117,-76.906545),
-          zoom:16,
-
-        };
-        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-      }
     </script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDS-eR3ZI__iigPwscpseRYOi8PU0jM_Q8&callback=myMap"></script>
 
   </body>
