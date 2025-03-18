@@ -72,9 +72,7 @@
     --container-ipad-landscape: 1133px;
     --container-mobile: 600px;
 
-    /* --spacing-container-padding-block: 2rem; */
     --spacing-container-padding-block: 4rem;
-    /* --spacing-container-padding-block: 6rem; */
     --spacing-container-padding-inline: 2rem;
     --spacing-container-padding-inline-large: 4rem;
   
@@ -124,8 +122,6 @@ body {
 
 ::-webkit-scrollbar-track
 {
-	/* -webkit-box-shadow: inset 0 0 6px rgba(0, 112, 248, 1); */
-	/* border-radius: 10px; */
 	background-color: #fff;
 }
 
@@ -137,8 +133,6 @@ body {
 
 ::-webkit-scrollbar-thumb
 {
-	/* border-radius: 10px; */
-	/* -webkit-box-shadow: inset 0 0 6px rgba(0, 112, 248, 1); */
 	background-color: rgba(0, 112, 248, 1);
 }
 
@@ -155,7 +149,6 @@ h1,h2,h3,h4,p,a {
     color: var(--brown);
     color: var(--blue);
     color: var(--white);
-    /* font-family: Arial !important; */
 }
 
 h1 {
@@ -164,31 +157,20 @@ h1 {
     font-family: DKDisplay, sans-serif;
     font-size: 5rem;
     letter-spacing: -0.01em;
-    /* line-height: 1.25rem; */
-    /* letter-spacing: 1px; */
-    /* letter-spacing: normal; */
 }
 
 h2 {
     font-family: DKDisplay, sans-serif;
     font-size: 3rem;
-    /* line-height: 1.25rem; */
-    /* letter-spacing: 1px; */
-    /* letter-spacing: normal; */
 }
 
 h3 {
     font-family: DKDisplay, sans-serif;
-    /* font-size: 1.4rem; */
-    /* line-height: 1.25rem; */
-    /* letter-spacing: normal; */
 }
 
 h4 {
     font-family: DKDisplay, sans-serif;
     font-size: 1.5rem;
-    /* line-height: 1.25rem; */
-    /* letter-spacing: normal; */
 }
 
 p {
@@ -196,31 +178,10 @@ p {
     font-family: DKDisplay, sans-serif;
     font-family: 'brevia', sans-serif;
     font-weight: 800;
-    /* font-size: 0.9rem; */
-    /* line-height: 1.25rem; */
-    /* letter-spacing: normal; */
 }
 
 a {
     font-family: AileronBlack, sans-serif;
-    /* border: solid #979797;
-    border-width: 1px 1px;
-    border-radius: 1rem;
-    background-color: rgba(0, 0, 0, 0.15);
-    line-height: 4rem;
-    padding: 0.8rem 1.8rem;
-    text-decoration: none;
-    color: #fff;
-    font-size: 0.8rem; */
-}
-
-a:hover,
-a:focus,
-a:focus-within {
-    /* background-color: #fff;
-    color: #000;
-    border: none;
-    padding: 0; */
 }
 
 .fade {
@@ -269,7 +230,6 @@ a:focus-within {
     padding: 0.75rem 20px 0.5rem;
     border-bottom: 3px solid var(--blue);
     position: sticky;
-    /* height: 64px; */
     top: 0;
     width: 100%;
     z-index: 5;
@@ -339,6 +299,55 @@ a:focus-within {
         text-decoration: none;
         display: grid;
     }
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    background: var(--blue);
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    padding: 24px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 4;
+}
+.menu a {
+    color: white;
+    font-size: 62px;
+    text-decoration: none;
+    margin: 15px 0;
+    transition: color 0.3s;
+    font-family: 'brevia', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    /* border-bottom: 1px solid; */
+}
+.menu a:hover {
+    color: white;
+}
+.menu.active {
+    transform: translateX(0);
+}
+.close-button {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    font-size: 16px;
+    letter-spacing: -0.04em;
+    color: white;
+    cursor: pointer;
+    z-index: 5;
+    font-family: 'brevia', sans-serif;
+    font-weight: 800;
 }
 
 .hero {
@@ -462,10 +471,7 @@ a:focus-within {
     h2 {
         font-size: 6.5rem;
         color: var(--blue);
-        /* font-family: 'brevia', sans-serif; */
-        /* font-weight: 800; */
         text-align: center;
-        /* padding-top: 4rem; */
         letter-spacing: -0.01em;
     }
 
@@ -475,12 +481,6 @@ a:focus-within {
     max-width: var(--width-grid-base);
     margin: auto;
     padding: var(--spacing-container-padding-block) var(--spacing-container-padding-inline);
-
-    /* @if $width-grid-base > 1440 {
-      @media (min-width: $container-ipad-landscape) and (max-width: 140rem + 4rem) {
-        padding-inline: var(--spacing-container-padding-inline-large);
-      }
-    } */
   }
 
 @media screen and (min-width: 1441px) {

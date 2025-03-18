@@ -29,7 +29,7 @@
 
     <nav id="nav" class="contain">
         <div class="nav-items-mob">
-          <img src="assets/images/menu.svg" width="28px" height="28px" />
+          <img class="menu-button" onclick="openMenu()" src="assets/images/menu.svg" width="28px" height="28px" />
         </div>
 
         <div class="nav-items-desk">
@@ -44,10 +44,15 @@
 
         <div class="nav-contact">
             <a class="tightspace" href="tel:570-772-3767">(570) 772-3767</a>
-            <!-- <h3 class="tightspace">(570) 772-3767</h3> -->
-            <img src="assets/images/phone-full.svg" width="28px" height="28px" />
         </div>
     </nav>
+
+    <div class="menu" id="mobileMenu">
+      <span class="close-button" onclick="closeMenu()">X Close</span>
+      <a href="#flavors" class="flavormenu" onclick="closeMenu()">FLAVORS</a>
+      <a href="#scoop" onclick="closeMenu()">MENU</a>
+      <a href="#story" onclick="closeMenu()">OUR STORY</a>
+    </div>
 
     <div class="hero">          
           <div class="text-box">
@@ -282,7 +287,6 @@
             }
           }); 
         });
-        
 
         $('.button-wrapper').on('click', function(){
           $('html, body').animate({
@@ -340,6 +344,20 @@
         prefersReducedMotion.addEventListener('change', (e) => handleCarouselState(e.matches));
 
         document.body.classList.remove('preload');
+      }
+
+      function openMenu() {
+        var menu = document.getElementById("mobileMenu");
+        if (menu.classList.contains('active')) {
+          document.getElementById("mobileMenu").classList.remove("active");
+        }
+        else {
+          document.getElementById("mobileMenu").classList.add("active");
+        }
+      }
+
+      function closeMenu() {
+        document.getElementById("mobileMenu").classList.remove("active");
       }
 
       animate();
