@@ -831,6 +831,7 @@ a {
     display: flex;
     padding: 0 60px;
     padding: 30px 60px;
+    padding: 60px 60px;
     /* gap: 80px; */
     align-items: center;
     justify-self: center;
@@ -852,6 +853,7 @@ a {
         font-family: 'brevia', sans-serif;
         font-weight: 500;
         font-size: 20px;
+        font-size: 18px;
         letter-spacing: -0.02em;
         line-height: 1.4;
         /* text-wrap: balance; */
@@ -863,7 +865,7 @@ a {
         max-width: 300px;
         max-width: 400px;
         height: auto;
-        top: 50px;
+        /* top: 50px; */
         position: relative;
         z-index: -4;
     }
