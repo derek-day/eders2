@@ -834,6 +834,23 @@ a {
     /* justify-items: right; */
 }
 
+.gallery {
+    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+    width: 100%;
+    align-items: center;
+    justify-self: center;
+    justify-items: center;
+    background-color: var(--yellow2);
+
+    img {
+        width: 500px;
+    }
+}
+
 .story {
     background-color: var(--blue);
     display: grid;
