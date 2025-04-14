@@ -838,6 +838,7 @@ a {
     display: flex;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1rem;
     padding: 1rem 0.5rem;
     width: 100%;
@@ -847,7 +848,9 @@ a {
     background-color: var(--yellow2);
 
     img {
-        width: 500px;
+        object-fit: cover;
+        width: 100%;
+        height: auto;
     }
 }
 
@@ -1087,6 +1090,15 @@ a {
         left: 120px; */
     }
 
+    .gallery {
+        display: block;
+        padding: 2rem 1rem 1rem 1rem;
+
+        img {
+            margin-bottom: 1rem;
+        }
+    }
+
     #scoop {
         flex-direction: column;
         /* text-align: center; */
@@ -1097,6 +1109,7 @@ a {
             top: 0;
             max-width: 200px;
             max-width: 125px;
+            display: none;
         }
 
         h1 {
@@ -1111,7 +1124,7 @@ a {
 
     .scooptext {
         max-width: 100%;
-        margin-bottom: 1rem;
+        /* margin-bottom: 1rem; */
     }
 
     .story {
