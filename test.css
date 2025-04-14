@@ -1092,11 +1092,15 @@ a {
 
     .gallery {
         display: block;
-        padding: 2rem 0 1rem 0;
+        padding: 1rem 0 1rem 0;
 
         img {
             margin-bottom: 1rem;
         }
+    }
+
+    .gal-last {
+        margin-bottom: 0;
     }
 
     #scoop {
