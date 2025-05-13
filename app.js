@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
 import { getFirestore, doc, setDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
 // Your Firebase config
@@ -16,7 +16,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-const analytics = getAnalytics(app);
+// const analytics = getAnalytics(app);
 
 // Login/Register functions
 window.register = function() {
@@ -27,25 +27,35 @@ window.register = function() {
     .catch(e => alert(e.message));
 }
 
-document.getElementById("registerBtn").addEventListener("click", async () => {
-  const email = document.getElementById("email").value;
-  const pass = document.getElementById("password").value;
-  try {
-    await createUserWithEmailAndPassword(auth, email, pass);
-    alert("Registered");
-  } catch (e) {
-    alert(e.message);
-  }
-});
+// document.getElementById("registerBtn").addEventListener("click", async () => {
+//   const email = document.getElementById("email").value;
+//   const pass = document.getElementById("password").value;
+//   try {
+//     console.log("register");
+//     await createUserWithEmailAndPassword(auth, email, pass);
+//     alert("Registered");
+//   } catch (e) {
+//     alert(e.message);
+//   }
+// });
 
-
-window.login = function() {
+document.getElementById("loginBtn").addEventListener("click", async () => {
+// window.login = function() {
   const email = document.getElementById("email").value;
   const pass = document.getElementById("password").value;
   signInWithEmailAndPassword(auth, email, pass)
     .then(() => alert("Logged In"))
     .catch(e => alert(e.message));
-}
+});
+
+document.getElementById("logoutBtn").addEventListener("click", async () => {
+  try {
+    await signOut(auth);
+    alert("Logged out");
+  } catch (e) {
+    alert("Logout failed: " + e.message);
+  }
+});
 
 // Example: Save quiz result
 async function saveQuizResult(score) {
@@ -82,15 +92,43 @@ window.submitQuizResult = async function() {
   }
 };
 
+const quizSection = document.getElementById("quizSection");
+const quizForm = document.getElementById("quizForm");
+
 onAuthStateChanged(auth, async (user) => {
-  if (user && user.email === "admin@example.com") {
-    const output = document.getElementById("output");
-    const querySnapshot = await getDocs(collection(db, "quiz_results"));
+  const loginBtn = document.getElementById("loginBtn");
+  const registerBtn = document.getElementById("registerBtn");
+  const logoutBtn = document.getElementById("logoutBtn");
+  const output = document.getElementById("output");
+
+  if (user) {
+    loginBtn.style.display = "none";
+    // registerBtn.style.display = "none";
+    logoutBtn.style.display = "inline";
+
+    if (user.email === "admin@example.com") {
+      const querySnapshot = await getDocs(collection(db, "quiz_results"));
+      output.textContent = "";
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        output.textContent += `Email: ${data.email}, Score: ${data.score}\n`;
+      });
+    }
+  } else {
+    loginBtn.style.display = "inline";
+    // registerBtn.style.display = "inline";
+    logoutBtn.style.display = "none";
     output.textContent = "";
-    querySnapshot.forEach((doc) => {
-      const data = doc.data();
-      output.textContent += `Email: ${data.email}, Score: ${data.score}\\n`;
-    });
   }
+
+  // if (user && user.email === "admin@example.com") {
+  //   const output = document.getElementById("output");
+  //   const querySnapshot = await getDocs(collection(db, "quiz_results"));
+  //   output.textContent = "";
+  //   querySnapshot.forEach((doc) => {
+  //     const data = doc.data();
+  //     output.textContent += `Email: ${data.email}, Score: ${data.score}\\n`;
+  //   });
+  // }
 });
 

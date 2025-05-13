@@ -921,6 +921,87 @@ a {
     display: block;
 }
 
+.login {
+    /* position: relative; */
+    /* z-index: 3; */
+    justify-self: center;
+    /* margin: 2rem; */
+    margin: 0 auto 0;
+    /* padding: 1rem 1rem 4rem 1rem; */
+    padding: 1rem;
+    border: 3px solid var(--blue);
+    border-radius: 12px;
+    background-color: var(--white);
+
+    h2 {
+        color: var(--blue);
+        text-align: center;
+    }
+
+    input {
+        /* margin: 0.25rem; */
+        margin-top: 0.25rem;
+        height: calc(1.5em + 0.75rem + 2px);
+        padding: 0.25rem 0.5rem;
+        border: 2px solid #d9d9d9;
+        border-radius: 9px;
+        transition: border-color 0.15s ease-in-out;
+        font-family: 'brevia', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: -0.25px;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    input:focus, input:active {
+        border: 2px solid var(--blue);
+    }
+
+    label {
+        font-family: 'brevia', sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: -0.25px;
+        font-size: 18px;
+        margin-bottom: 0.25rem;
+    }
+
+    button {
+        /* margin: 0.25rem; */
+        margin-right: 1rem;
+        float: right;
+        background-color: var(--blue);
+        color: white;
+        border: 2px solid;
+        border-radius: 12px;
+        padding: 0 30px;
+        height: 46px;
+        font-family: 'brevia', sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        /* letter-spacing: -0.25px; */
+        letter-spacing: -0.02em;
+        transition: background-color .3s ease, color .3s ease, border .3s ease;
+        font-size: 18px;
+    }
+
+    button:hover {
+        background-color: var(--white);
+        color: var(--blue);
+        cursor: pointer;
+    }
+}
+
+.form-input {
+    margin: 1.25rem;
+}
+
+.login-input:focus {
+    border: 2px solid var(--blue);
+    outline: 0;
+}
+
 @media screen and (max-width: 900px) {
     #nav {
         grid-template-columns: 1fr 3fr 1fr;

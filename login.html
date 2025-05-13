@@ -4,17 +4,18 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-        <meta name="theme-color" content="#FFF7F0">
+        <meta name="theme-color" content="#ffffff">
         <meta name="description" content="Eder's Ice Cream - Local Ice Cream Shop">
         <meta name="keywords" content="Ice Cream, Local Shop, Montoursville">
         <meta name="author" content="Derek Day">
         <meta httpEquiv="Content-Security-Policy" content="frame-src https%3A%2F%2Fwww.facebook.com%2Fvitrina.bg%2Fposts%2Fpfbid02EWp2MPqbUQ2DrYVkRinegLm2ae1yE6MUbnrypM6D5cV64zt2wG5zej5ExryG6VSil&show_text=true&width=500" />
-        <title>Eder's Ice Cream | Login</title>
+        <title>Eder's Ice Cream | Employee</title>
         <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
 
-        <link rel="stylesheet" href="eders.css">
+        <!-- <link rel="stylesheet" href="eders.css"> -->
+        <link rel="stylesheet" href="test.css">
 
         <link rel="stylesheet" href="https://use.typekit.net/dis0ttn.css">
 
@@ -23,31 +24,81 @@
         <script src="https://cdn.jsdelivr.net/npm/three@0.115/examples/js/loaders/GLTFLoader.js"></script>
     </head>
 
-    <body>
-    <h2>Login</h2>
-    <input type="email" id="email" placeholder="Email">
-    <input type="password" id="password" placeholder="Password">
-    <button id="loginBtn">Login</button>
-    <button id="registerBtn">Register</button>
+    <body style="background-color: #FFEBBC;">
 
-    <script type="module" src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
-    <script type="module" src="app.js"></script>
-    <script>
-        
-        document.getElementById("registerBtn").addEventListener("click", async () => {
-            const email = document.getElementById("email").value;
-            const pass = document.getElementById("password").value;
-            try {
-                await createUserWithEmailAndPassword(auth, email, pass);
-                alert("Registered");
-            } catch (e) {
-                alert(e.message);
-            }
-        });
+        <nav id="nav" class="contain">
+            <div class="nav-items-mob">
+            <img class="menu-button" onclick="openMenu()" src="assets/images/menu.svg" width="28px" height="28px" />
+            </div>
 
-    </script>
+            <div class="nav-items-desk">
+            <a id="flavorlink" href="#flavors">OUR FLAVORS</a>
+            <a id="menulink" href="#scoop">OUR MENU</a>
+            <a id="storylink" href="#story">OUR STORY</a>
+            </div>
+
+            <div class="nav-title">
+            <h1 class="navh1">Eder's Ice Cream</h1>
+            </div>
+
+            <div class="nav-contact">
+                <a class="tightspace" href="tel:570-772-3767">(570) 772-3767</a>
+            </div>
+        </nav>
+
+        <div class="menu" id="mobileMenu">
+            <span class="close-button" onclick="closeMenu()">X Close</span>
+            <a href="#flavors" class="flavormenu" onclick="closeMenu()">FLAVORS</a>
+            <a href="#scoop" onclick="closeMenu()">MENU</a>
+            <a href="#story" onclick="closeMenu()">OUR STORY</a>
+            <a class="tightspace" href="tel:570-772-3767">(570) 772-3767</a>
+            <p>2242 Route 87 Highway<br/>Montoursville, PA 17754</p>
+        </div>
+
+        <div class="hero">
+            <div class="login">
+                <h2>Sign In</h2>
+                <div>
+                    <div class="form-input">
+                        <label for="Email" class="fcf-label">Email</label>
+                        <input class="login-input" type="email" id="email" placeholder="email@example.com">
+                    </div>
+                    <div class="form-input">
+                        <label for="Password" class="fcf-label">Password</label>
+                        <input class="login-input" type="password" id="password" placeholder="*********">
+                    </div>
+                </div>
+                <button id="loginBtn">LOGIN</button>
+                <!-- <button id="registerBtn">Register</button> -->
+                <button id="logoutBtn" style="display:none;">LOGOUT</button>
+                <!-- <button id="submitResultBtn">Submit Dummy Quiz Result</button> -->
+                <pre id="output"></pre>
+            </div>
+        </div>
+
+        <div id="quizSection" style="display:none;">
+            <h3>Quiz</h3>
+            <form id="quizForm">
+                <p>1. What is 2 + 2?</p>
+                <label><input type="radio" name="q1" value="4"> 4</label><br>
+                <label><input type="radio" name="q1" value="3"> 3</label><br>
+                <label><input type="radio" name="q1" value="5"> 5</label><br>
+
+                <p>2. What color is the sky?</p>
+                <label><input type="radio" name="q2" value="blue"> Blue</label><br>
+                <label><input type="radio" name="q2" value="green"> Green</label><br>
+                <label><input type="radio" name="q2" value="red"> Red</label><br>
+
+                <button type="submit">Submit Quiz</button>
+            </form>
+        </div>
+
+
+
+        <script type="module" src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+        <script type="module" src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js"></script>
+        <script type="module" src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
+        <script type="module" src="app.js"></script>
     </body>
 
 </html>
