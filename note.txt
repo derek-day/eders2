@@ -10,3 +10,5 @@ Check with Tye
     - currently set as email, but may be able to do phone number login as well.
     - create random password, or let employees create their own?
 - may change design, let me know if he thinks of something better
+    - need to fix mobile logout
+    - need to add enter key to login
