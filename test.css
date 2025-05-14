@@ -1087,7 +1087,7 @@ a {
         font-style: normal;
         letter-spacing: -0.5px;
         font-size: 18px;
-        margin-top: 1rem;
+        margin-top: 1.5rem;
     }
 
     li {
@@ -1098,6 +1098,7 @@ a {
         letter-spacing: -0.5px;
         font-size: 16px;
         margin-top: 0.25rem;
+        padding-bottom: 0.5rem;
         list-style-type: none;
     }
 }
@@ -1353,6 +1354,14 @@ a {
 
     #googleMap {
         margin: 40px 0;
+    }
+
+    #quizSection {
+        padding-top: 2rem;
+    }
+
+    #logoutBtn {
+        margin-bottom: 2rem;
     }
 
 }
