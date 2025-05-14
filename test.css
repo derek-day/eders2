@@ -1086,6 +1086,8 @@ a {
     height: 100dvh;
     padding-top: 2rem;
     margin: 0 auto;
+    text-align: center;
+    place-items: center;
 
     h2 {
         color: black;
