@@ -24,7 +24,7 @@
         <script src="https://cdn.jsdelivr.net/npm/three@0.115/examples/js/loaders/GLTFLoader.js"></script>
     </head>
 
-    <body style="background-color: #FFEBBC;">
+    <body>
 
         <nav id="nav" class="contain">
             <div class="nav-items-mob">
@@ -55,7 +55,7 @@
             <p>2242 Route 87 Highway<br/>Montoursville, PA 17754</p>
         </div>
 
-        <div class="hero">
+        <div class="hero" id="loginHero">
             <div class="login">
                 <h2>Sign In</h2>
                 <div>
@@ -70,29 +70,41 @@
                 </div>
                 <button id="loginBtn">LOGIN</button>
                 <!-- <button id="registerBtn">Register</button> -->
-                <button id="logoutBtn" style="display:none;">LOGOUT</button>
+                <!-- <button id="logoutBtn" style="display:none;">LOGOUT</button> -->
                 <!-- <button id="submitResultBtn">Submit Dummy Quiz Result</button> -->
-                <pre id="output"></pre>
+                <!-- <pre id="output"></pre> -->
             </div>
         </div>
 
         <div id="quizSection" style="display:none;">
-            <h3>Quiz</h3>
-            <form id="quizForm">
-                <p>1. What is 2 + 2?</p>
-                <label><input type="radio" name="q1" value="4"> 4</label><br>
-                <label><input type="radio" name="q1" value="3"> 3</label><br>
-                <label><input type="radio" name="q1" value="5"> 5</label><br>
+            <button id="logoutBtn" style="display:none;">LOGOUT</button>
 
-                <p>2. What color is the sky?</p>
-                <label><input type="radio" name="q2" value="blue"> Blue</label><br>
-                <label><input type="radio" name="q2" value="green"> Green</label><br>
-                <label><input type="radio" name="q2" value="red"> Red</label><br>
+            <h2>Quiz</h2>
+            <form id="quizForm">
+                <div>
+                    <p>1. What is 2 + 2?</p>
+                    <label><input type="radio" name="q1" value="4"> 4</label><br>
+                    <label><input type="radio" name="q1" value="3"> 3</label><br>
+                    <label><input type="radio" name="q1" value="5"> 5</label><br>
+                </div>
+
+                <div>
+                    <p>2. What color is the sky?</p>
+                    <label><input type="radio" name="q2" value="blue"> Blue</label><br>
+                    <label><input type="radio" name="q2" value="green"> Green</label><br>
+                    <label><input type="radio" name="q2" value="red"> Red</label><br>
+                </div>
 
                 <button type="submit">Submit Quiz</button>
             </form>
+
+                <div id="quizResult" style="margin-top: 1em;"></div>
+                <button id="redoQuizBtn" style="display:none;">Redo Quiz</button>
         </div>
 
+            <!-- <button id="logoutBtn" style="display:block;">LOGOUT</button> -->
+
+        <div id="output"></div>
 
 
         <script type="module" src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>

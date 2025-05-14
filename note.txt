@@ -1,0 +1,12 @@
+Check with Tye
+
+- basic quiz is done
+- should we store each quiz result, or just the last?
+- should we show the correct answer after submission?
+- can login to see all user scores as admin@example.com test123
+- do want want videos for each question or have it as a separate page?
+- does he want help on taking pictures or video?
+- setting as only login, do not want anyone to create their own account
+    - currently set as email, but may be able to do phone number login as well.
+    - create random password, or let employees create their own?
+- may change design, let me know if he thinks of something better
