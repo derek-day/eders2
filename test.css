@@ -1085,6 +1085,7 @@ a {
     background-color: var(--yellow);
     height: 100dvh;
     padding-top: 2rem;
+    margin: 0 auto;
 
     h2 {
         color: black;
