@@ -1015,6 +1015,7 @@ a {
     margin: 0 auto;
     padding-top: 4rem;
     justify-items: center;
+    place-items: center;
     animation: .4s .2s heroFade both;
 
     h2 {
