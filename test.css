@@ -11,7 +11,8 @@
     --white2: #fff7f0;
     --yellow: #FBE0AD;
     --yellow2: #FFEBBC;
-    --blue: #0070F8;
+    /* --blue: #0070F8; */
+    --blue: #f37072;
 
     --width-grid-base: 1440px;
     --container-ipad: 744px;

@@ -14,11 +14,13 @@ Check with Tye
     - need to add enter key to login
 
 
-- three chances to take quiz 
-    - either highest or keep all
+- three chances to take quiz
+    - either keep highest score or keep all
     - 80% to pass
 
 - show each question in admin side to see what was answered
 
 tes59541@gmail.com for admin
 Icecream1927
+
+main color is pink
