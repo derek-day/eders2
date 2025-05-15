@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
-import { getFirestore, doc, setDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+import { getFirestore, doc, setDoc, addDoc, getDocs, collection, query, where } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
 // Your Firebase config
 const firebaseConfig = {
@@ -88,7 +88,9 @@ async function showAllScoresForAdmin() {
       const timestamp = data.timestamp?.seconds
         ? new Date(data.timestamp.seconds * 1000).toLocaleString()
         : "No time";
-      const scoreLine = `Score: ${data.score ?? "?"}, Time: ${timestamp}`;
+      // const scoreLine = `Score: ${data.score ?? "?"}, Time: ${timestamp}`;
+      const scoreLine = `Attempt #${data.attempt ?? "?"} - Score: ${data.score ?? "?"}, Time: ${timestamp}`;
+
 
       if (!scoresByUser[email]) scoresByUser[email] = [];
 
@@ -196,6 +198,12 @@ quizForm.addEventListener("submit", async (e) => {
     return;
   }
 
+  const attempts = await getUserSubmissionCount(user.email);
+  if (attempts >= 3) {
+    alert("You've already taken the quiz 3 times. Please check in with Tye.");
+    return;
+  }
+
   let score = 0;
   const answers = {
     q1: "4",
@@ -214,17 +222,25 @@ quizForm.addEventListener("submit", async (e) => {
   });
 
   try {
-    await setDoc(doc(db, "quiz_results", user.uid), {
+    // await setDoc(doc(db, "quiz_results", user.uid), {
+    await addDoc(collection(db, "quiz_results"), {
       email: user.email,
       score: score,
-      q1: quizForm.q1.value,
-      q2: quizForm.q2.value,
+      // q1: quizForm.q1.value,
+      // q2: quizForm.q2.value,
       answers: userAnswers,
+      attempt: attempts + 1,
       timestamp: new Date()
     });
 
     quizForm.style.display = "none";
-    document.getElementById("quizResult").textContent = `Your score: ${score} / ${Object.keys(answers).length}`;
+
+    const newAttempts = attempts + 1;
+    const remaining = 3 - newAttempts;
+
+    output.innerHTML = `<p>Your score: <strong>${score}</strong></p>`;
+    output.innerHTML += `<p>You have <strong>${2 - attempts}</strong> attempt(s) remaining.</p>`;
+    document.getElementById("quizResult").textContent = `Your score: ${score} / ${Object.keys(answers).length}. You have ${remaining} quiz attempt${remaining === 1 ? "" : "s"} remaining.`;
     document.getElementById("redoQuizBtn").style.display = "inline-block";
     // alert(`Quiz submitted! Your score: ${score}`);
   } catch (e) {
@@ -241,6 +257,15 @@ document.getElementById("redoQuizBtn").addEventListener("click", () => {
   document.getElementById("redoQuizBtn").style.display = "none";
 });
 
+async function getUserSubmissionCount(email) {
+  const q = query(
+    collection(db, "quiz_results"),
+    where("email", "==", email)
+  );
+  const snapshot = await getDocs(q);
+  return snapshot.size;
+}
+
 onAuthStateChanged(auth, async (user) => {
   const loginBtn = document.getElementById("loginBtn");
   //const registerBtn = document.getElementById("registerBtn");
@@ -255,7 +280,18 @@ onAuthStateChanged(auth, async (user) => {
     quizSection.style.height = "100dvh";
     quizForm.style.display = "block";
     loginHero.style.display = "none";
-    output.style.display = "none";
+    // output.style.display = "none";
+    output.style.display = "block";
+
+    const attempts = await getUserSubmissionCount(user.email);
+    const remaining = 3 - attempts;
+
+    if (remaining <= 0) {
+      quizForm.style.display = "none";
+      output.innerHTML = `<p>You have already taken the quiz 3 times. Please check in with Tye.</p>`;
+    } else {
+      output.innerHTML = `<p>You have <strong>${remaining}</strong> quiz attempt${remaining === 1 ? "" : "s"} remaining.</p>`;
+    }
 
     if (user.email === ADMIN_EMAIL) {
       await showAllScoresForAdmin();
