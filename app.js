@@ -288,7 +288,8 @@ onAuthStateChanged(auth, async (user) => {
 
     if (remaining <= 0) {
       quizForm.style.display = "none";
-      output.innerHTML = `<p>You have already taken the quiz 3 times. Please check in with Tye.</p>`;
+      quizSection.style.height = "125px";
+      output.innerHTML = `<p style="color:black";>You have already taken the quiz 3 times. Please check in with Tye.</p>`;
     } else {
       output.innerHTML = `<p>You have <strong>${remaining}</strong> quiz attempt${remaining === 1 ? "" : "s"} remaining.</p>`;
     }
