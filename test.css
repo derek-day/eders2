@@ -293,6 +293,11 @@ a {
 .menu.active {
     transform: translateX(0);
 }
+
+.menu-button {
+    filter: brightness(0) saturate(100%) invert(77%) sepia(42%) saturate(6190%) hue-rotate(312deg) brightness(100%) contrast(91%);
+}
+
 .close-button {
     position: absolute;
     top: 70px;
@@ -343,6 +348,12 @@ a {
     div {
         animation: fadeInUp .6s cubic-bezier(0.68, -0.6, 0.32, 1.6) both;
     }
+}
+
+#introHero {
+    flex-flow: column;
+    place-content: center;
+    gap: 2rem;
 }
 
 @keyframes heroFade {
@@ -944,6 +955,9 @@ a {
     h2 {
         color: var(--blue);
         text-align: center;
+        letter-spacing: -0.05em;
+        font-family: 'brevia', sans-serif;
+        font-weight: 800;
     }
 
     input {
