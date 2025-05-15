@@ -57,7 +57,7 @@ document.getElementById("logoutBtn").addEventListener("click", async () => {
   }
 });
 
-const ADMIN_EMAIL = "admin@example.com";
+const ADMIN_EMAIL = "tes59541@gmail.com";
 
 async function showAllScoresForAdmin() {
   const output = document.getElementById("output");

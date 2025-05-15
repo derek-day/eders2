@@ -12,3 +12,13 @@ Check with Tye
 - may change design, let me know if he thinks of something better
     - need to fix mobile logout
     - need to add enter key to login
+
+
+- three chances to take quiz 
+    - either highest or keep all
+    - 80% to pass
+
+- show each question in admin side to see what was answered
+
+tes59541@gmail.com for admin
+Icecream1927
