@@ -63,45 +63,119 @@ async function showAllScoresForAdmin() {
   const output = document.getElementById("output");
   output.innerHTML = "<h2>All User Scores</h2>";
 
+  const questions = {
+    q1: {
+      text: "What is 2 + 2?",
+      correct: "4"
+    },
+    q2: {
+      text: "What color is the sky?",
+      correct: "blue"
+    }
+  };
+
   try {
     const querySnapshot = await getDocs(collection(db, "quiz_results"));
+    if (querySnapshot.empty) {
+      output.innerHTML += "<p>No quiz results found.</p>";
+      return;
+    }
 
-    // Group scores by email
     const scoresByUser = {};
     querySnapshot.forEach((doc) => {
       const data = doc.data();
-      const email = data.email;
-      const scoreEntry = `Score: ${data.score}, Time: ${new Date(data.timestamp?.seconds * 1000).toLocaleString()}`;
+      const email = data.email || "unknown";
+      const timestamp = data.timestamp?.seconds
+        ? new Date(data.timestamp.seconds * 1000).toLocaleString()
+        : "No time";
+      const scoreLine = `Score: ${data.score ?? "?"}, Time: ${timestamp}`;
 
-      if (!scoresByUser[email]) {
-        scoresByUser[email] = [];
-      }
-      scoresByUser[email].push(scoreEntry);
+      if (!scoresByUser[email]) scoresByUser[email] = [];
+
+      scoresByUser[email].push({
+        scoreLine,
+        answers: data.answers
+      });
     });
 
-    // Render grouped results
     for (const email in scoresByUser) {
       output.innerHTML += `<h4>${email}</h4><ul>`;
-      scoresByUser[email].forEach(score => {
-        output.innerHTML += `<li>${score}</li>`;
+      scoresByUser[email].forEach(entry => {
+        output.innerHTML += `<li>${entry.scoreLine}`;
+
+        if (entry.answers) {
+          output.innerHTML += "<ul>";
+          for (const qid in entry.answers) {
+            const userAnswer = entry.answers[qid];
+            const question = questions[qid];
+            const correct = question?.correct ?? "N/A";
+            const text = question?.text ?? qid;
+
+            output.innerHTML += `<li><strong><b>${text}</b></strong><br>
+              <b>User Answer</b>: <em>${userAnswer}</em><br>
+              <b>Correct Answer</b>: <strong>${correct}</strong></li>`;
+          }
+          output.innerHTML += "</ul>";
+        }
+
+        output.innerHTML += "</li>";
       });
       output.innerHTML += "</ul>";
     }
 
   } catch (err) {
-    output.textContent = "Error fetching scores: " + err.message;
-    console.error(err);
+    console.error("Error fetching scores:", err);
+    output.innerHTML = `<p style="color:red;">Error: ${err.message}</p>`;
   }
 }
+
+
+// async function showAllScoresForAdmin() {
+//   const output = document.getElementById("output");
+//   output.innerHTML = "<h2>All User Scores</h2>";
+
+//   try {
+//     const querySnapshot = await getDocs(collection(db, "quiz_results"));
+
+//     const scoresByUser = {};
+//     querySnapshot.forEach((doc) => {
+//       const data = doc.data();
+//       const email = data.email;
+//       const scoreEntry = `Score: ${data.score}, Time: ${new Date(data.timestamp?.seconds * 1000).toLocaleString()}`;
+
+//       if (!scoresByUser[email]) {
+//         scoresByUser[email] = [];
+//       }
+//       scoresByUser[email].push(scoreEntry);
+//     });
+
+//     for (const email in scoresByUser) {
+//       output.innerHTML += `<h4>${email}</h4><ul>`;
+//       scoresByUser[email].forEach(score => {
+//         output.innerHTML += `<li>${score}</li>`;
+//       });
+//       output.innerHTML += "</ul>";
+//     }
+
+//   } catch (err) {
+//     output.textContent = "Error fetching scores: " + err.message;
+//     console.error(err);
+//   }
+// }
 
 
 window.submitQuizResult = async function() {
   const user = auth.currentUser;
   if (user) {
+    const userAnswers = {
+      q1: quizForm.q1.value,
+      q2: quizForm.q2.value
+    }
     const score = Math.floor(Math.random() * 100); // Dummy score
     await setDoc(doc(db, "quiz_results", user.uid), {
       email: user.email,
       score: score,
+      answers: userAnswers,
       timestamp: new Date()
     });
     alert("Quiz result saved: " + score);
@@ -145,6 +219,7 @@ quizForm.addEventListener("submit", async (e) => {
       score: score,
       q1: quizForm.q1.value,
       q2: quizForm.q2.value,
+      answers: userAnswers,
       timestamp: new Date()
     });
 

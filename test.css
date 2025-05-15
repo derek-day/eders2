@@ -81,6 +81,7 @@ body {
 ::-webkit-scrollbar-thumb
 {
 	background-color: rgba(0, 112, 248, 1);
+    background-color: #f37072;
 }
 
 img,
