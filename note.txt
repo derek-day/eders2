@@ -17,7 +17,6 @@ Check with Tye
 - three chances to take quiz
     - either keep highest score or keep all
     - 80% to pass
-    - need to add this still
 
 - show each question in admin side to see what was answered
 

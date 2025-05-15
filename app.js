@@ -89,7 +89,12 @@ async function showAllScoresForAdmin() {
         ? new Date(data.timestamp.seconds * 1000).toLocaleString()
         : "No time";
       // const scoreLine = `Score: ${data.score ?? "?"}, Time: ${timestamp}`;
-      const scoreLine = `Attempt #${data.attempt ?? "?"} - Score: ${data.score ?? "?"}, Time: ${timestamp}`;
+      const passedText = data.passed ? "✅ Passed" : "❌ Failed";
+
+      // const scoreLine = `Attempt #${data.attempt ?? "?"} - Score: ${data.score ?? "?"}, Time: ${timestamp}`;
+
+      const scoreLine = `Attempt #${data.attempt ?? "?"} - Score: ${data.score ?? "?"} - ${passedText} - Time: ${timestamp}`;
+
 
 
       if (!scoresByUser[email]) scoresByUser[email] = [];
@@ -215,11 +220,20 @@ quizForm.addEventListener("submit", async (e) => {
     q2: quizForm.q2.value
   };
 
-  Object.keys(answers).forEach(q => {
-    if (userAnswers[q] === answers[q]) {
-      score++;
-    }
-  });
+  if (userAnswers.q1 === "4") score++;
+  if (userAnswers.q2.toLowerCase() === "blue") score++;
+
+  const totalQuestions = 2;
+  // const totalQuestions = Object.keys(userAnswers).length;
+  const percent = (score / totalQuestions) * 100;
+
+  // Object.keys(answers).forEach(q => {
+  //   if (userAnswers[q] === answers[q]) {
+  //     score++;
+  //   }
+  // });
+
+  const passed = percent >= 80;
 
   try {
     // await setDoc(doc(db, "quiz_results", user.uid), {
@@ -230,7 +244,8 @@ quizForm.addEventListener("submit", async (e) => {
       // q2: quizForm.q2.value,
       answers: userAnswers,
       attempt: attempts + 1,
-      timestamp: new Date()
+      timestamp: new Date(),
+      passed: passed
     });
 
     quizForm.style.display = "none";
@@ -239,9 +254,20 @@ quizForm.addEventListener("submit", async (e) => {
     const remaining = 3 - newAttempts;
 
     output.innerHTML = `<p>Your score: <strong>${score}</strong></p>`;
+    if (percent >= 80) {
+      output.innerHTML += `<p style="color:green;"><strong>Congratulations! You passed the quiz. ✅</strong></p>`;
+    } else {
+      output.innerHTML += `<p style="color:red;"><strong>You did not pass. Try again.</strong></p>`;
+    }
+
     output.innerHTML += `<p>You have <strong>${2 - attempts}</strong> attempt(s) remaining.</p>`;
     document.getElementById("quizResult").textContent = `Your score: ${score} / ${Object.keys(answers).length}. You have ${remaining} quiz attempt${remaining === 1 ? "" : "s"} remaining.`;
-    document.getElementById("redoQuizBtn").style.display = "inline-block";
+    // document.getElementById("redoQuizBtn").style.display = "inline-block";
+    if (remaining == 0) {
+      document.getElementById("redoQuizBtn").style.display = "none";
+    } else {
+      document.getElementById("redoQuizBtn").style.display = "inline-block";
+    }
     // alert(`Quiz submitted! Your score: ${score}`);
   } catch (e) {
     alert("Error saving result: " + e.message);
