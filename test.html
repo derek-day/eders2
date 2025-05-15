@@ -46,7 +46,8 @@
         </div>
 
         <div class="nav-title">
-          <h1 class="navh1">Eder's Ice Cream</h1>
+          <a id="navHeader" href="#top"><h1 class="navh1">Eder's Ice Cream</h1></a>
+          <!-- <h1 class="navh1">Eder's Ice Cream</h1> -->
         </div>
 
         <div class="nav-contact">
@@ -328,6 +329,12 @@
             //scrollTop: $('#flavors').offset().top
           //}, 1000);
         //});
+
+        $('#navHeader').on('click', function(){
+          $('html, body').animate({
+            scrollTop: $('body').offset().top
+          }, 1000);
+        });
 
         $('#flavorlink').on('click', function(){
           $('html, body').animate({
